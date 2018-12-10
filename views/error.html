@@ -1,0 +1,10 @@
+{% set title = 'Error' %}
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+    <h1 class="local-header__title">{{message}}</h1>
+    <h2>{{error.status}}</h2>
+    <pre>{{error.stack}}</pre>
+</div>
+{% endblock %}

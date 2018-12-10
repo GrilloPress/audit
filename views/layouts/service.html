@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  {% include "partials/_header.html" %}
+  {% import "partials/_macros.html" as patterns %}
+  {% from 'header/macro.njk' import header %}
+  {% block scripts %}{% endblock %}
+  <script>
+    (function(d) {
+      d.className = d.className.replace(/\bno-js\b/, 'js-enabled')
+    })(document.documentElement)
+  </script>
+</head>
+<body>
+
+  {{ header({
+    "service": {
+      "name": serviceName,
+      "longName": "true"
+    },
+    "showNav": "false",
+    "showSearch": "false"
+    })
+  }}
+
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-three-quarters">
+          {% block body %}{% endblock %}
+        </div>
+        <div class="nhsuk-grid-column-one-quarter">
+          {% block sidebar %}{% endblock %}
+        </div>
+      </div>
+    </main>
+  </div>
+
+    {% include "partials/_footer.html" %}
+  </body>
+</html>
