@@ -1,38 +1,27 @@
 
 // for now...
 
-// Core (required)
-@import 'node_modules/nhsuk-frontend/packages/core/all';
+// Core (required) using this to include all of the utlities and variables...
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
 // prototype scss
 @import "prototype/cards";
 @import "prototype/list";
+@import "prototype/headings";
 
-.nhsuk-transaction-header {
 
-  padding: 0;
-  // padding-bottom: 20px;
-  @include mq($from: tablet) {
-    padding: 20px
-  }
-}
-
-.nhsuk-transaction-header__title {
-
-  color: $color_nhsuk-white;
-  float: left;
-  margin: 0;
-  margin-bottom: 10px;
-  @include mq($from: tablet) {
-    line-height: 2;
-  }
-
-}
-
+// Override strange padding on mobile
 .nhsuk-header__logo {
 
-  padding-left: 0px;
-  padding-right: 0px;
-  @include mq($from: tablet) {
-    padding-right: 20px;
+  @include mq($until: tablet) {
+
+    padding-left: 0px;
+    padding-right: 0px;
   }
+}
+
+// Override default browser address italics
+
+address {
+
+  font-style: normal;
 }

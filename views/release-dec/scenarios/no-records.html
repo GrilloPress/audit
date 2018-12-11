@@ -1,9 +1,9 @@
-{% set title = "Find out who's looked at your health records" %}
+{% set title = "Your Summary Care Record has not been looked at" %}
 {% set serviceName = "Find out who's looked at your health records" %}
 {% set PROTOTYPEURL = "release-dec" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/nhsuk.html' %}
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -25,48 +25,32 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
 
-{% block breadcrumb %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "#",
-        text: "Home"
-      }
-    ],
-    href: "#",
-    text: "Find out who's looked at your health records"
-  }) }}
-{% endblock %}
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
-  <h1>{{serviceName}}</h1>
-  <p>
-    Use this service to find out who’s looked at your Summary Care Record.
-  </p>
-  <p>
-    Your Summary Care Record comes from your GP record. It tells health and care staff:
-  </p>
-  <ul>
-    <li>your allergies</li>
-    <li>your medicines</li>
-    <li>any reactions you've had to medicines</li>
-  </ul>
-  <p>
-  <h2>Before you start</h2>
-  <p>
-    To use this service you'll need:
-  </p>
-  <ul>
-    <li>to be 16 or older</li>
-    <li>an NHS login</li>
-  </ul>
-  <p>If you do not have an NHS login you’ll be able to set one up.</p>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
-    Start now
-  </button>
+  <div class="nhsuk-u-reading-width">
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">
+            <span class="audit-subheading">In the last year</span>
+            {{title}}
+          </h1>
+          <p>
+            If you have not received care in an emergency, at a walk-in centre or at a pharmacy it is unlikely your Summary Care Record was looked at.
+          </p>
+          <p>
+            If you're still worried speak to the place where you received care.
+          </p>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
+
 {% block sidebar %}
 {% endblock %}

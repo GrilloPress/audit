@@ -31,17 +31,17 @@
 
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
+
   <div class="nhsuk-u-reading-width">
     <div class="audit-promo">
       <div class="audit-promo-wrapper">
         <div class="audit-promo__content">
           <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
           <p>
-            By using this service you agree to our <a href="#">terms and conditions</a> which states that:
+            By using this service you agree to our <a href="#">terms and conditions</a> which explains that:
           </p>
           <ul>
-            <li>We will use your NHS login to verify your identity</li>
+            <li>We will use NHS login to verify your identity</li>
             <li>Use your NHS number to check who has looked at your records</li>
           </ul>
           <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/NHS-login'">
@@ -50,8 +50,6 @@
       </div>
     </div>
   </div>
-
-
 </div>
 
 {% endblock %}
