@@ -1,26 +1,16 @@
-
-// for now...
-
+// For now...
 // Core (required) using this to include all of the utlities and variables...
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// audit scss
+@import "audit/cards";
+@import "audit/list";
+@import "audit/headings";
 // prototype scss
-@import "prototype/cards";
-@import "prototype/list";
-@import "prototype/headings";
-
-
-// Override strange padding on mobile
-.nhsuk-header__logo {
-
-  @include mq($until: tablet) {
-
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
+@import "prototype/prototype";
+@import "prototype/interruption";
 
 // Override default browser address italics
-
 address {
 
   font-style: normal;

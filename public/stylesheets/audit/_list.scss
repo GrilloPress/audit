@@ -1,3 +1,30 @@
+// utility unstyled list
+
+.audit-list--unstyled {
+
+  list-style-type: none;
+  padding-left: 0;
+}
+
+// Make the list-panel have subchildren
+
+
+.nhsuk-list-panel__label--m {
+  @include nhsuk-typography-responsive(22);
+
+  background-color: $color_nhsuk-blue;
+  color: $color_nhsuk-white;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: nhsuk-spacing(2) nhsuk-spacing(3);
+
+  @include mq($media-type: print) {
+    color: $color_nhsuk-black;
+    margin-top: 0;
+  }
+
+}
+
 .nhsuk-list-panel-heading {
   margin-top: nhsuk-spacing(4);
   padding: nhsuk-spacing(1) nhsuk-spacing(3);
