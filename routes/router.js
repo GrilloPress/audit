@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render( 'index' );
 });
 
+router.get('/login', function(req, res, next) {
+  res.render( 'v5/explainer/health-and-care-staff-might-look-at-your-Summary-Care-Record-to-check-your-allergies-and-medicines.html' );
+});
+
 router.get('/:view', function(req, res, next) {
   var theView = req.params.view;
   res.render( theView );
