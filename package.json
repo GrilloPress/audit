@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "devstart": "./node_modules/nodemon/bin/nodemon.js ./bin/www"
   },
+  "engines": {
+    "node": "8.x"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
