@@ -36,11 +36,6 @@ app.use('/static', express.static('static'));
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
 var env = process.env.NODE_ENV || 'development';
-var isSecure = (env === 'production' && useHttps === 'true')
-if (isSecure) {
-  app.use(forceHttps)
-  app.set('trust proxy', 1) // needed for secure cookies on heroku
-}
 
 // Support session data
 app.use(session({
