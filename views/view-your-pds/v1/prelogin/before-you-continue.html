@@ -1,9 +1,9 @@
-{% set title = 'Check the personal details the NHS has for you' %}
+{% set title = "We need to use your details to check who's looked at your health records" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/nhsuk.html' %}
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -25,50 +25,34 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
 
-{% block breadcrumb %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "#",
-        text: "Home"
-      }
-    ],
-    href: "#",
-    text: "Your health records"
-  }) }}
-{% endblock %}
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
-  <h1>{{serviceName}}</h1>
-  <p>
-    Use this service to check the personal details the NHS has for you.
-  </p>
-  <p>
-    The NHS has a patient database which includes information such as your:
-  </p>
-  <ul>
-    <li>name</li>
-    <li>address</li>
-    <li>date of birth</li>
-    <li>NHS number</li>
-  </ul>
-  <p>This information is used by the NHS to help identify you and allow services to contact you. For example, to help a hospital text you an appointment reminder.</p>
-  <p>
-  <h2>Before you start</h2>
-  <p>
-    To use this service you'll need:
-  </p>
-  <ul>
-    <li>to be 16 or older</li>
-    <li>an NHS login</li>
-  </ul>
-  <p>If you do not have an NHS login you’ll be able to set one up.</p>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
-    Start now
-  </button>
+
+  <div class="nhsuk-u-reading-width">
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+          <p>
+            By using this service you agree to our <a href="#">terms and conditions</a> which explains that we will use:
+          </p>
+          <ul>
+            <li>NHS login to verify your identity</li>
+            <li>your NHS number to check who has looked at your records</li>
+          </ul>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='http://nhs-cid.herokuapp.com/create-account/demo/start?service=app4&serviceName=Audit%20And%20Transparency&returnUrl=https://nhs-audit.herokuapp.com/login&devMode=undefined'">
+            Agree and continue
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
+
 {% block sidebar %}
 {% endblock %}
