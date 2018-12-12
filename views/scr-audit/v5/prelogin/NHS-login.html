@@ -1,6 +1,6 @@
-{% set title = 'Do you have an NHS login?' %}
-{% set serviceName = "Audit and transparency" %}
-{% set PROTOTYPEURL = "v5" %}
+{% set title = "NHS login" %}
+{% set serviceName = "Find out who's looked at your health records" %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -31,29 +31,20 @@
 
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
-
-  <form class="" method="get" action="int.html">
-    {{ input({
-      "label": {
-        "text": "Enter your NHS number",
-        "classes": "nhsuk-label--l",
-        "isPageHeading": true
-      },
-      "hint": {
-        "text": "This is a 10 digit number, like 485 777 3456."
-      },
-      "id": "nhsNumber",
-      "name": "nhsNumber",
-      "classes": "nhsuk-input--width-10"
-    }) }}
-
-    <button type="submit" class="nhsuk-button">
-      Continue
-    </button>
-
-  </form>
-
+  <div class="nhsuk-u-reading-width">
+    <div class="audit-interruption">
+      <div class="audit-interruption-wrapper">
+        <div class="audit-interruption__content">
+          <h1 class="audit-interruption__heading nhsuk-heading-l">{{title}}</h1>
+          <p>
+            The user would now login.
+          </p>
+          <button type="submit" class="nhsuk-button nhsuk-button--reverse" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you'">
+            Continue
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

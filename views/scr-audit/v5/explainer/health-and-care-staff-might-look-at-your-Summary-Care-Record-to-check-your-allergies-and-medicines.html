@@ -1,6 +1,6 @@
-{% set title = "We will show you where your Summary Care Record has been looked at" %}
+{% set title = "Health and care staff might look at your Summary Care Record to check your allergies and medicines" %}
 {% set serviceName = "Find out who's looked at your health records" %}
-{% set PROTOTYPEURL = "v5" %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -36,7 +36,12 @@
       <div class="audit-promo-wrapper">
         <div class="audit-promo__content">
           <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-Summary-Care-Record-has-been-looked-at'">
+          <ul>
+            <li>in an emergency</li>
+            <li>at a walk-in centre</li>
+            <li>at a pharmacy</li>
+          </ul>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/we-will-show-you-where-your-Summary-Care-Record-has-been-looked-at'">
             Continue
           </button>
       </div>

@@ -1,5 +1,6 @@
-{% set title = 'Do you have an NHS login?' %}
-{% set serviceName = "Audit and transparency" %}
+{% set title = "Health services such as your GP surgery or dentist have their own health record about you" %}
+{% set serviceName = "Find out who's looked at your health records" %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -25,39 +26,25 @@
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
 {% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
 
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-{{ radios({
-  "idPrefix": "nhs-login",
-  "name": "nhs-login",
-  "fieldset": {
-    "legend": {
-      "text": "Do you have an NHS login?",
-      "isPageHeading": true,
-      "classes": "nhsuk-fieldset__legend--l"
-    }
-  },
-  "items": [
-    {
-      "value": "yes",
-      "text": "Yes"
-    },
-    {
-      "value": "no",
-      "text": "No, I'll need to create one"
-    },
-    {
-      "value": "unsure",
-      "text": "I'm unsure"
-    }
-  ]
-}) }}
-
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='int'">
-    Continue
-  </button>
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+          <p>
+            One of your health records is called a Summary Care Record.
+          </p>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/your-Summary-Care-Record-comes-from-your-GP-record'">
+            Continue
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

@@ -1,8 +1,9 @@
-{% set title = 'Do you have an NHS login?' %}
-{% set serviceName = "Find out who's looked at your health records" %}
+{% set title = 'Check the personal details the NHS has for you' %}
+{% set serviceName = "Check the personal details the NHS has for you" %}
+{% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/layout-nhsuk.html' %}
+{% extends 'layouts/nhsuk.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -24,11 +25,21 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
-{% from 'button/macro.njk' import button %}
 
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "#",
+    text: "Your health records"
+  }) }}
+{% endblock %}
 
 {% block body %}
-
 <div class="nhsuk-u-reading-width">
   <h1>{{serviceName}}</h1>
   <p>
@@ -52,12 +63,10 @@
     <li>an NHS login</li>
   </ul>
   <p>If you do not have an NHS login you’ll be able to set one up.</p>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='login'">
-    Continue
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
+    Start now
   </button>
 </div>
-
 {% endblock %}
-
 {% block sidebar %}
 {% endblock %}

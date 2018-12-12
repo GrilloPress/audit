@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render( 'v5/explainer/health-and-care-staff-might-look-at-your-Summary-Care-Record-to-check-your-allergies-and-medicines.html' );
+  res.render( 'scr-audit/v5/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you' );
 });
 
 router.get('/:view', function(req, res, next) {

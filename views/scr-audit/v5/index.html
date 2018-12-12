@@ -1,6 +1,6 @@
-{% set title = "Health and care staff might look at your Summary Care Record to check your allergies and medicines" %}
-{% set serviceName = "Find out who's looked at your health records" %}
-{% set PROTOTYPEURL = "v5" %}
+{% set title = 'Release Late December' %}
+{% set serviceName = "Audit and transparency" %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -25,31 +25,26 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
-{% from 'button/macro.njk' import button %}
-{% from 'input/macro.njk' import input %}
-{% from 'label/macro.njk' import label %}
-
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <ul>
-            <li>in an emergency</li>
-            <li>at a walk-in centre</li>
-            <li>at a pharmacy</li>
-          </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/we-will-show-you-where-your-Summary-Care-Record-has-been-looked-at'">
-            Continue
-          </button>
-      </div>
-    </div>
-  </div>
+  <h1>{{title}} - {{serviceName}}</h1>
+
+  <h2>Prototype flow</h2>
+  <ol>
+    <li><a href="/{{PROTOTYPEURL}}/start">Start</a></li>
+    <li><a href="/{{PROTOTYPEURL}}/before-you-continue">Before you continue</a></li>
+  </ol>
+
+  <h2>Scenarios</h2>
+
+  <h2>Error pages</h2>
+
+  <h2>Other</h2>
+  <ul>
+    <li><a href="/{{PROTOTYPEURL}}/nhsnumber">NHS number example</a></li>
+  </ul>
 </div>
-
 {% endblock %}
-
 {% block sidebar %}
 {% endblock %}

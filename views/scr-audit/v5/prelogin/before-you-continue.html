@@ -1,16 +1,6 @@
-{% set title = "Where your Summary Care Record has been looked at" %}
+{% set title = "We need to use your details to check who's looked at your health records" %}
 {% set serviceName = "Find out who's looked at your health records" %}
-{% set PROTOTYPEURL = "v5" %}
-{% set DATESTAMP = 'Friday 21 September 2018' %}
-{% set TIME = '3:32pm' %}
-{% set LOCATION = 'Leeds Teaching Hospitals NHS Trust' %}
-{% set PHONE = '0113 243 2799' %}
-{% set ADDRESS = "Leeds General Infirmary <br />
-                  Great George Street <br />
-                  Leeds <br />
-                  West Yorkshire <br />
-                  LS1 3EX"
-                  %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -38,34 +28,28 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-{% from 'back-link/macro.njk' import backLink %}
 
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
 
-  {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/timeline/where-your-Summary-Care-Record-has-been-looked-at",
-    "text": "Back to list"
-  }) }}
-
-  <h1 class="nhsuk-heading-l">
-    <span class="audit-subheading">{{DATESTAMP}}</span> 
-    {{TIME}}
-  </h1>
-  <p>Your Summary Care Record was looked at by {{LOCATION}}.</p>
-  <h2 class="nhsuk-heading-m">How to find out more</h2>
-  <p>Contact {{LOCATION}}:</p>
-  <ul>
-    <li>for more information</li>
-    <li>to make a complaint</li>
-  </ul>
-  <address>
-    <p>
-      {{ADDRESS | safe }}
-    </p>
-    <p>Telephone: {{PHONE}}</p>
-  </address>
+  <div class="nhsuk-u-reading-width">
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+          <p>
+            By using this service you agree to our <a href="#">terms and conditions</a> which explains that we will use:
+          </p>
+          <ul>
+            <li>NHS login to verify your identity</li>
+            <li>your NHS number to check who has looked at your records</li>
+          </ul>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='http://nhs-cid.herokuapp.com/create-account/demo/start?service=app4&serviceName=Audit%20And%20Transparency&returnUrl=https://nhs-audit.herokuapp.com/login&devMode=undefined'">
+            Agree and continue
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

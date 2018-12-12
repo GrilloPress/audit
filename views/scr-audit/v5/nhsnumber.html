@@ -1,8 +1,9 @@
 {% set title = 'Do you have an NHS login?' %}
-{% set serviceName = "Find out who's looked at your health records" %}
+{% set serviceName = "Audit and transparency" %}
+{% set PROTOTYPEURL = "scr-audit/v5" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/service.html' %}
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -25,28 +26,33 @@
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
 {% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
 
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
 
-  <div class="audit-promo">
-    <div class="audit-promo-wrapper">
-      <div class="audit-promo__content">
-        <h1 class="audit-promo__heading nhsuk-heading-l">Continue journey</h1>
-        <p>
-          At this stage of your journey, you would either log in or create your account.
-        </p>
-        <p>
-          You would then be redirected back to this service.
-        </p>
-        <button type="submit" class="nhsuk-button" onclick="window.location.href='int'">
-          Continue
-        </button>
-    </div>
-  </div>
+  <form class="" method="get" action="int.html">
+    {{ input({
+      "label": {
+        "text": "Enter your NHS number",
+        "classes": "nhsuk-label--l",
+        "isPageHeading": true
+      },
+      "hint": {
+        "text": "This is a 10 digit number, like 485 777 3456."
+      },
+      "id": "nhsNumber",
+      "name": "nhsNumber",
+      "classes": "nhsuk-input--width-10"
+    }) }}
 
-</div>
+    <button type="submit" class="nhsuk-button">
+      Continue
+    </button>
+
+  </form>
 
 </div>
 
