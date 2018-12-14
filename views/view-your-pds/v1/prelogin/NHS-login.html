@@ -1,4 +1,4 @@
-{% set title = "We need to use your details to check who's looked at your health records" %}
+{% set title = "NHS login" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
@@ -31,33 +31,16 @@
 
 
 {% block body %}
-
   <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+    <div class="audit-interruption">
+      <div class="audit-interruption-wrapper">
+        <div class="audit-interruption__content">
+          <h1 class="audit-interruption__heading nhsuk-heading-l">{{title}}</h1>
           <p>
-            By using this service you agree to our <a href="#">terms and conditions</a> which explains that we will use:
+            The user would now login.
           </p>
-          <ul>
-            <li>NHS login to verify your identity</li>
-            <li>your NHS number to retrieve your records</li>
-          </ul>
-
-          <script type="text/javascript">
-          // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login care. If it is on heroku, goes to the URL provided
-          function auth(url) {
-            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
-              window.location.href='NHS-login'
-            } else {
-              window.location.href='http://nhs-cid.herokuapp.com/create-account/demo/start?service=app4&serviceName=Audit%20And%20Transparency&returnUrl=https://nhs-audit.herokuapp.com/login-pds&devMode=undefined'
-            }
-          }
-          </script>
-
-          <button type="submit" class="nhsuk-button" onclick="auth()">
-            Agree and continue
+          <button type="submit" class="nhsuk-button nhsuk-button--reverse" onclick="window.location.href='/{{PROTOTYPEURL}}/your-details/1'">
+            Continue
           </button>
       </div>
     </div>
