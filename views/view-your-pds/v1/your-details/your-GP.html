@@ -1,10 +1,24 @@
-{% set title = "Find out who's looked at your health records" %}
-{% set serviceName = "Find out who's looked at your health records" %}
-{% set PROTOTYPEURL = "scr-audit/v5" %}
-{% set template = "single" %}
+{% set title = "Your details" %}
+{% set serviceName = "Check your personal details" %}
+{% set PROTOTYPEURL = "view-your-pds/v1" %}
+{% set details = [
+  {
+    name: "Sally Wash",
+    dob: "5/5/1948",
+    gender: "Female",
+    placeOfBirth: "Skegness",
+    NHSNumber: "485 777 3456",
+    address: "Grand Parade <br />
+                      Great George Street <br />
+                      Skegness <br />
+                      Lincolnshire <br />
+                      PE25 2UE"
+  }
+]
+%}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/nhsuk.html' %}
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -26,44 +40,30 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
-
-{% block breadcrumb %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "#",
-        text: "Home"
-      }
-    ],
-    href: "#",
-    text: "Find out who's looked at your health records"
-  }) }}
-{% endblock %}
-
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h1>{{serviceName}}</h1>
-  <p>
-    Use this service to find out who’s looked at your Summary Care Record.
-  </p>
-  <p>
-    Your Summary Care Record comes from your GP record. It tells health and care staff:
-  </p>
-  <ul>
-    <li>your allergies</li>
-    <li>your medicines</li>
-    <li>any reactions you've had to medicines</li>
-  </ul>
-  <p>
-    <h2>To use this service you'll need:</h2>
-    <ul>
-      <li>to be 16 or older</li>
-      <li>an NHS login - if you do not have one, we'll help you set one up</li>
-    </ul>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
-    Start now
-  </button>
+  <h1 class="nhsuk-heading-l">
+    Your GP Surgery
+  </h1>
+
+  <div class="nhsuk-panel-with-label">
+    <h2 class="nhsuk-panel-with-label__label">Current registration</h2>
+    <p>Words</p>
+    <p>details</p>
+    <p>since</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Previously</h2>
+  <ol class="audit-list--unstyled">
+    <li>Words</li>
+  </ol>
+
 </div>
 {% endblock %}
+
 {% block sidebar %}
 {% endblock %}

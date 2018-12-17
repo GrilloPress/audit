@@ -42,9 +42,21 @@
           </p>
           <ul>
             <li>NHS login to verify your identity</li>
-            <li>your NHS number to check who has looked at your records</li>
+            <li>your NHS number to retrieve your records</li>
           </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='http://nhs-cid.herokuapp.com/create-account/demo/start?service=app4&serviceName=Audit%20And%20Transparency&returnUrl=https://nhs-audit.herokuapp.com/login&devMode=undefined'">
+
+          <script type="text/javascript">
+          // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login care. If it is on heroku, goes to the URL provided
+          function auth(url) {
+            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+              window.location.href='NHS-login'
+            } else {
+              window.location.href='http://nhs-cid.herokuapp.com/create-account/demo/start?service=app4&serviceName=Audit%20And%20Transparency&returnUrl=https://nhs-audit.herokuapp.com/login-pds&devMode=undefined'
+            }
+          }
+          </script>
+
+          <button type="submit" class="nhsuk-button" onclick="auth()">
             Agree and continue
           </button>
       </div>

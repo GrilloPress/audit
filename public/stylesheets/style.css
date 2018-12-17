@@ -5681,6 +5681,21 @@ b {
   font-size: 80%;
   display: block; }
 
+.audit-list-cards a {
+  text-decoration: none;
+  color: #212b32; }
+
+.audit-list-cards__item:hover {
+  background-color: #ffcd60; }
+
+.audit-list-cards__heading {
+  color: #005eb8; }
+
+.nhsuk-list-panel-inner-list__container {
+  border-bottom: 1px solid #d8dde0;
+  margin: 0;
+  padding: 16px; }
+
 .audit-interruption {
   margin-bottom: 36px;
   /* [1] */
@@ -5723,6 +5738,48 @@ b {
 
 .audit-interruption__description {
   color: #ffffff; }
+
+dl {
+  margin: 0 0 32px 0; }
+  dl dt {
+    font-weight: 600;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5; }
+    @media (min-width: 40.0625em) {
+      dl dt {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        line-height: 1.47368; } }
+    @media print {
+      dl dt {
+        font-size: 14pt;
+        line-height: 1.15; } }
+  dl dd {
+    margin: 0 0 16px 0; }
+
+.audit-dl-link {
+  display: block;
+  padding: 4px 0; }
+
+.audit-dl--inline__dt {
+  vertical-align: top; }
+  @media (min-width: 40.0625em) {
+    .audit-dl--inline__dt {
+      display: inline-block;
+      padding: 4px 8px 4px 0;
+      width: 44%; } }
+
+.audit-dl--inline__dd {
+  margin: 0; }
+  @media (min-width: 40.0625em) {
+    .audit-dl--inline__dd {
+      display: inline-block;
+      padding: 8px 8px 4px 0; } }
+
+.audit-dl--inline__container {
+  border-bottom: 1px solid #d8dde0;
+  padding: 4px 8px 4px 0; }
 
 address {
   font-style: normal; }

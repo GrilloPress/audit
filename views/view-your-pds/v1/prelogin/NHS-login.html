@@ -1,6 +1,6 @@
-{% set title = "We need to use your details to check who's looked at your health records" %}
-{% set serviceName = "Find out who's looked at your health records" %}
-{% set PROTOTYPEURL = "release-dec" %}
+{% set title = "NHS login" %}
+{% set serviceName = "Check your personal details" %}
+{% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -31,21 +31,16 @@
 
 
 {% block body %}
-
   <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+    <div class="audit-interruption">
+      <div class="audit-interruption-wrapper">
+        <div class="audit-interruption__content">
+          <h1 class="audit-interruption__heading nhsuk-heading-l">{{title}}</h1>
           <p>
-            By using this service you agree to our <a href="#">terms and conditions</a>, which explains that we'll use:
+            The user would now login.
           </p>
-          <ul>
-            <li>your NHS login to check who you are</li>
-            <li>your NHS number to check who has looked at your records</li>
-          </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='https://nhs-cid.herokuapp.com/create-account/v14/start?service=app4&serviceName=Find%20out%20who%27s%20looked%20at%20your%20health%20records&returnUrl=https://nhs-audit.herokuapp.com/login'">
-            Agree and continue
+          <button type="submit" class="nhsuk-button nhsuk-button--reverse" onclick="window.location.href='/{{PROTOTYPEURL}}/your-details/your-details'">
+            Continue
           </button>
       </div>
     </div>
