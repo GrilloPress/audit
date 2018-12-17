@@ -1,0 +1,81 @@
+{% set title = "Your details" %}
+{% set serviceName = "Check your personal details" %}
+{% set PROTOTYPEURL = "view-your-pds/v1" %}
+{% set details = [
+  {
+    name: "Sally Wash",
+    dob: "5/5/1948",
+    gender: "Female",
+    placeOfBirth: "Skegness",
+    NHSNumber: "485 777 3456",
+    address: "Grand Parade <br />
+                      Great George Street <br />
+                      Skegness <br />
+                      Lincolnshire <br />
+                      PE25 2UE"
+  }
+]
+%}
+
+, Skegness
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1 class="nhsuk-heading-l">
+    Your details
+  </h1>
+
+  <ul class="audit-list--unstyled audit-list-cards">
+    <li class="audit-list-cards__item">
+      <a href="1-inline">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">See your personal details</h2>
+        <p>The details we have for you. Such as your name and date of birth.</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="your-GP">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">See your current GP surgery</h2>
+        <p>The details for your current GP surgery and where you have been registered before.</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="your-GP">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">See who's looked at your details</h2>
+        <p></p>
+      </a>
+    </li>
+  </ul>
+
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
