@@ -1,10 +1,10 @@
-{% set title = "Find out who's looked at your health records" %}
+{% set title = "Sorry, you’ll need to log in again" %}
 {% set serviceName = "Find out who's looked at your health records" %}
 {% set PROTOTYPEURL = "scr-audit/v5" %}
-{% set template = "single" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/nhsuk.html' %}
+
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -26,43 +26,22 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
 
-{% block breadcrumb %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "#",
-        text: "Home"
-      }
-    ],
-    href: "#",
-    text: "Find out who's looked at your health records"
-  }) }}
-{% endblock %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h1>{{serviceName}}</h1>
-  <p>
-    Use this service to find out who’s looked at your Summary Care Record.
-  </p>
-  <p>
-    Your Summary Care Record comes from your GP record. It tells health and care staff:
-  </p>
-  <ul>
-    <li>your allergies</li>
-    <li>your medicines</li>
-    <li>any reactions you've had to medicines</li>
-  </ul>
-    <h2>To use this service you'll need:</h2>
-    <ul>
-      <li>to be 16 or older</li>
-      <li>an NHS login - if you do not have one, we'll help you set one up</li>
-    </ul>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
-    Start now
+  <h1 class="nhsuk-heading-l">{{title}}</h1>
+  <p>We've logged you out because you’ve not used this service for a while.</p>
+  <p>We do this for your security.</p>
+  <button type="submit" class="nhsuk-button">
+    Log in again
   </button>
 </div>
+
 {% endblock %}
+
 {% block sidebar %}
 {% endblock %}
