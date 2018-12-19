@@ -1,0 +1,89 @@
+{% set title = 'Help users understand complex health data' %}
+{% set serviceName = "National data opt out programme" %}
+{% set PROTOTYPEURL = "decisions" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block hero %}
+{{ hero({
+"heading": title,
+"text": "Provide information that is required at the moment it is needed to ensure users are set up for success"
+}) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <p>The health and care system is complicated. And the use and processing of data is varied.</p>
+  <p>Users should not have to understand how data and records are created and managed to:</p>
+  <ul>
+    <li>take ownership, in part, of their health records</li>
+    <li>see what information the NHS has about them</li>
+  </ul>
+  <p>However, if a user wishes to take ownership or see that information, they should be set up for success.</p>
+  <p>The system should provide users with plain explainations of what data the NHS has, how it is used, why it is shared and with whom, when the user wishes to see that information more clearly.</p>
+  <p>If there are not clear reasons for processsing or keeping data, the NHS should not be processsing or keeping that data.</p>
+  <p>The system should not try to explain the "universe", but provide just enough information, just in time to satisfy their needs.</p>
+  <p>Before a user sees complex medical records or audit data, the system should:</p>
+  <ul>
+    <li>clearly state what data the NHS has</li>
+    <li>why that data is used for their care or beyond their care</li>
+  </ul>
+  <p>This information will likely be complicated. Or introduce new concepts or modes of data processing. This information should be:</p>
+  <ul>
+    <li>in plain language</li>
+    <li>explained bit by bit in a journey</li>
+    <li>give context to data they can see or manage</li>
+  </ul>
+  <h2>Examples</h2>
+  <h3>Explainer cards</h3>
+  <ul class="audit-list--unstyled">
+    <li><a href="/scr-audit/v5/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you">Series of cards users see before they see a timeline of their Summary Care Record use</a></li>
+  </ul>
+  <h2>Hypotheses</h2>
+  <p>
+    <strong>If</strong> we use plain language to explain step by step, how complex systems (like Summary Care Record) works <br />
+    <strong>then</strong> user's will know what information they are seeing and how it is used
+  </p>
+  <p><strong>We know this works when:</strong></p>
+  <ul>
+    <li>users can state why the NHS uses the data they are seeing</li>
+    <li>users are able to easily navigate data when they see it</li>
+    <li>users report the data from their health records is in a format "as expected" and intuitive</li>
+  </ul>
+  <hr>
+
+</div>
+
+{{ backLink({
+  "href": "/" + PROTOTYPEURL + "/index",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}
