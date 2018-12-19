@@ -1,0 +1,75 @@
+{% set title = 'Tell users what data the service will use' %}
+{% set serviceName = "National data opt out programme" %}
+{% set PROTOTYPEURL = "decisions" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block hero %}
+{{ hero({
+"heading": title,
+"text": "Before a user has their data processed, be clear what will happen by using this service"
+}) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <p>When a user starts a service that shows or audits their health records their records will be processed.</p>
+  <p>This is implicit in the service, but a user may not be aware exact how and why their data is being used.</p>
+  <p>The system should:</p>
+  <ul>
+    <li>clearly state what data is being used</li>
+    <li>why that data is used</li>
+    <li>what data is shared or processed elsewhere</li>
+  </ul>
+  <h2>Examples</h2>
+  <ul class="audit-list--unstyled">
+    <li><a href="/scr-audit/v5/prelogin/before-you-continue">Page users see before they audit their Summary Care Record</a></li>
+  </ul>
+  <h2>Hypotheses</h2>
+  <p>
+    <strong>If</strong> we use plain language to explain what data will be used and why <br />
+    <strong>then</strong> user's will know what information they are happy to have processed
+  </p>
+  <p><strong>We know this works when:</strong></p>
+  <ul>
+    <li>users report increased confidence in the NHS's ethical management of their data (in terms of this service)</li>
+    <li>users reports higher usability</li>
+    <li>users are able to explain (at a high-level) what information is being processed and why</li>
+  </ul>
+  <hr>
+
+</div>
+
+{{ backLink({
+  "href": "/" + PROTOTYPEURL + "/index",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}
