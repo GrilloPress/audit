@@ -1,0 +1,82 @@
+{% set title = 'Help users sign back in' %}
+{% set serviceName = "National data opt out programme" %}
+{% set PROTOTYPEURL = "decisions" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block hero %}
+{{ hero({
+"heading": title,
+"text": "When a user's session expires, give them help to sign back in"
+}) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <p>When a user's session expires, or they need to authenticate, and they are still intending to be active we should tell them why they need to sign back in.</p>
+  <p>The system should not redirect them to the log in page without notice.</p>
+  <p>Once reauthenticated the system should:</p>
+  <ul>
+    <li>redirect them from the page they were prevously</li>
+    <li>or continue from the action they indended to take before they were asked to reauthenticate</li>
+  </ul>
+  <h2>Examples</h2>
+  <ul class="audit-list--unstyled">
+    <li><a href="/scr-audit/v5/errors/session-expired">Page users see if their session has ended</a></li>
+  </ul>
+  <h2>Hypotheses</h2>
+  <p>
+    <strong>If</strong> we give users a page that tells them why they need to log back in, and how, <br />
+    <strong>then</strong> user's will know what to do next if they need to reauthenticate
+  </p>
+  <p><strong>We know this works when:</strong></p>
+  <ul>
+    <li>users successfully continue their journey even after being asked to log back in</li>
+  </ul>
+  <hr>
+  <p>
+    <strong>If</strong> redirect users back to where they were before they had to reauthenticate <br />
+    <strong>then</strong> user's can continue using the service how they intended
+  </p>
+  <p><strong>We know this works when:</strong></p>
+  <ul>
+    <li>users successfully continue their journey even after being asked to log back in</li>
+    <li>users don't return to the first page of the service after reauthentication</li>
+  </ul>
+  <hr>
+
+</div>
+
+{{ backLink({
+  "href": "/" + PROTOTYPEURL + "/index",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

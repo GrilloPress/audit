@@ -1,5 +1,6 @@
-{% set title = 'Audit and transparency' %}
+{% set title = 'Design decisions' %}
 {% set serviceName = "National data opt out programme" %}
+{% set PROTOTYPEURL = "decisions" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -24,47 +25,36 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block hero %}
 {{ hero({
 "heading": title,
-"text": "Prototypes, explorations and concepts."
+"text": "Core concepts and interactions."
 }) }}
 {% endblock %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h2>Design decisions and patterns</h2>
-  <p>Agreed approaches and <a href="decisions/index">design decisions</a></p>
-  <h2>End to end prototypes</h2>
-  <h3>Find out who's looked at your health records</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/release-dec/start">
-        Full service journey with NHS login prototype - Late dec
+  <ul class="audit-list--unstyled audit-list-cards">
+    <li class="audit-list-cards__item">
+      <a href="/{{PROTOTYPEURL}}/help-users-sign-in">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Help users log back in</h2>
+
+        <p>When a user's session expires, give them help to sign back in</p>
       </a>
     </li>
-  </ol>
-  <h2>Service prototypes</h2>
-  <h3>Find out who's looked at your health records</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/scr-audit/v5/start">
-        Find out who's looked at your health records - Late dec
-      </a>
-    </li>
-  </ol>
-  <h2>NHS website prototypes</h2>
-  <h2>Concept prototypes</h2>
-  <h3 style="display:none;">Check the personal details the NHS has for you</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/view-your-pds/v1/start">
-        Initial concept - Late dec
-      </a>
-    </li>
-  </ol>
+  </ul>
+
 </div>
+
+{{ backLink({
+  "href": "/",
+  "text": "Back to previous page"
+}) }}
 {% endblock %}
 {% block sidebar %}
 {% endblock %}
