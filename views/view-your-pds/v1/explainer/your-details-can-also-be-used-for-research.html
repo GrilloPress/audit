@@ -1,21 +1,6 @@
-{% set title = "Your details" %}
+{% set title = "Your details can also be used for research and planning" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
-{% set details = [
-  {
-    name: "Sally Wash",
-    dob: "5/5/1948",
-    gender: "Female",
-    placeOfBirth: "Skegness",
-    NHSNumber: "485 777 3456",
-    address: "Grand Parade <br />
-                      Great George Street <br />
-                      Skegness <br />
-                      Lincolnshire <br />
-                      PE25 2UE"
-  }
-]
-%}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -43,31 +28,23 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-{% from 'back-link/macro.njk' import backLink %}
+
+
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
-    "text": "Back to previous page"
-  }) }}
-  
-  <h1 class="nhsuk-heading-l">
-    Your GP Surgery
-  </h1>
-
-  <div class="nhsuk-panel-with-label">
-    <h2 class="nhsuk-panel-with-label__label">Current registration</h2>
-    <p>Words</p>
-    <p>details</p>
-    <p>since</p>
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+          <p>Such as supporting health screening services.</p>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/everytime-your-details-are-used-is-tracked'">
+            Continue
+          </button>
+      </div>
+    </div>
   </div>
-
-  <h2 class="nhsuk-heading-m">Previously</h2>
-  <ol class="audit-list--unstyled">
-    <li>Words</li>
-  </ol>
-
 </div>
+
 {% endblock %}
 
 {% block sidebar %}

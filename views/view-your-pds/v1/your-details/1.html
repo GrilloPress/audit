@@ -51,6 +51,11 @@
 {% from 'back-link/macro.njk' import backLink %}
 {% block body %}
 <div class="nhsuk-u-reading-width">
+  {{ backLink({
+    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+    "text": "Back to previous page"
+  }) }}
+  
   {% for d in details %}
   <h1 class="nhsuk-heading-l">
     Your details
