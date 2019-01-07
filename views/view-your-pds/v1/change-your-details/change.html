@@ -1,4 +1,4 @@
-{% set title = "Your details" %}
+{% set title = "How to change your details" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% set details = [
@@ -52,74 +52,23 @@
 {% block body %}
 <div class="nhsuk-u-reading-width">
   {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+    "href": "/" + PROTOTYPEURL + "/your-details/1-inline",
     "text": "Back to previous page"
   }) }}
-
-  {% for d in details %}
   <h1 class="nhsuk-heading-l">
     {{title}}
   </h1>
-
-  <dl class="audit-dl--inline">
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Name</dt>
-      <dd class="audit-dl--inline__dd">{{ d.name }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Date of birth</dt>
-      <dd class="audit-dl--inline__dd">{{ d.dob }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Place of birth</dt>
-      <dd class="audit-dl--inline__dd">{{ d.placeOfBirth }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Gender</dt>
-      <dd class="audit-dl--inline__dd">
-        {{ d.gender }}
-        <span class="audit-dl-link"><a>Where this information comes from</a></span>
-      </dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">NHS number</dt>
-      <dd class="audit-dl--inline__dd">{{ d.NHSNumber }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Email</dt>
-      <dd class="audit-dl--inline__dd">{{ d.email }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Telephone</dt>
-      <dd class="audit-dl--inline__dd">{{ d.telephone }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Mobile</dt>
-      <dd class="audit-dl--inline__dd">{{ d.mobile }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Address</dt>
-      <dd class="audit-dl--inline__dd">
-        {{ d.address | safe }}
-        <span class="audit-dl-link"><a>Previous addresses</a></span>
-      </dd>
-    </div>
-
-</dl>
-
-  {% endfor %}
-
-
-  <a href="/{{PROTOTYPEURL}}/change-your-details/change">How to update these details</a>
-
+  <p>Services across the NHS use your records to manage your care. It's important that your details are up to date.</p>
+  <p>Using this service you can only update your contact details. You can change or add:</p>
+  <ul>
+    <li>an email address</li>
+    <li>your mobile phone number</li>
+    <li>your home phone</li>
+    <li>where you live</li>
+  </ul>
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/change-your-details/your-details'">
+    Continue
+  </button>
 </div>
 {% endblock %}
 

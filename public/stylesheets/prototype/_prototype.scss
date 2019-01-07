@@ -6,6 +6,13 @@
 
     text-decoration: none;
     color: $color_nhsuk-black;
+    display: block;
+
+    &:hover {
+
+      background-color: $nhsuk-link-hover-background-color;
+
+    }
   }
 
 }
@@ -14,11 +21,6 @@
 
   margin-bottom: nhsuk-spacing(5);
 
-  &:hover {
-
-    background-color: $nhsuk-link-hover-background-color;
-
-  }
 }
 
 .audit-list-cards__heading {

@@ -5682,12 +5682,13 @@ b {
 
 .audit-list-cards a {
   text-decoration: none;
-  color: #212b32; }
+  color: #212b32;
+  display: block; }
+  .audit-list-cards a:hover {
+    background-color: #ffcd60; }
 
 .audit-list-cards__item {
   margin-bottom: 32px; }
-  .audit-list-cards__item:hover {
-    background-color: #ffcd60; }
 
 .audit-list-cards__heading {
   color: #005eb8;
