@@ -50,7 +50,7 @@
   }) }}
 
   <h1 class="nhsuk-heading-l">
-    <span class="audit-subheading">{{DATESTAMP}}</span> 
+    <span class="audit-subheading">{{DATESTAMP}}</span>
     {{TIME}}
   </h1>
   <p>Your Summary Care Record was looked at by {{LOCATION}}.</p>
@@ -60,12 +60,6 @@
     <li>for more information</li>
     <li>to make a complaint</li>
   </ul>
-  <address>
-    <p>
-      {{ADDRESS | safe }}
-    </p>
-    <p>Telephone: {{PHONE}}</p>
-  </address>
 </div>
 
 {% endblock %}
