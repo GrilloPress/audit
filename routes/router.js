@@ -12,6 +12,10 @@ router.get('/login', function(req, res, next) {
   res.render( 'scr-audit/v5/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you' );
 });
 
+router.get('/release-login', function(req, res, next) {
+  res.render( 'release-dec/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you' );
+});
+
 router.get('/login-pds', function(req, res, next) {
   res.render( 'view-your-pds/v1/your-details' );
 });
