@@ -32,10 +32,6 @@
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
-    "text": "Back to your details"
-  }) }}
     <div class="audit-promo">
       <div class="audit-promo-wrapper">
         <div class="audit-promo__content">
@@ -49,6 +45,10 @@
           <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'">
             Agree and continue
           </button>
+          {{ backLink({
+            "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+            "text": "Back to your details"
+          }) }}
       </div>
     </div>
   </div>
