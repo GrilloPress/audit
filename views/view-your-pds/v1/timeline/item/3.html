@@ -1,6 +1,15 @@
-{% set title = "We will show you where your details have been used" %}
+{% set title = "Where your Summary Care Record has been looked at" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
+{% set DATESTAMP = 'Friday 19 January 2018' %}
+{% set TIME = '2:24pm' %}
+{% set LOCATION = 'Knights Pharmacy' %}
+{% set PHONE = '0113 268 1163' %}
+{% set ADDRESS = "6 Stainbeck Lane <br />
+                  Leeds <br />
+                  West Yorkshire <br />
+                  LS7 3QY"
+                  %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -30,28 +39,32 @@
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
 
+
 {% block body %}
 <div class="nhsuk-u-reading-width">
+
   {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
-    "text": "Back to your details"
+    "href": "/" + PROTOTYPEURL + "/timeline/where-your-details-have-been-looked-at",
+    "text": "Back to list"
   }) }}
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>
-            By continuing you agree to our <a href="#">privacy notice</a>, which explains that we will use the information you give us to:
-          </p>
-          <ul>
-            <li>check who has looked at your records</li>
-          </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'">
-            Agree and continue
-          </button>
-      </div>
-    </div>
-  </div>
+
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">{{DATESTAMP}}</span>
+    {{TIME}}
+  </h1>
+  <p>Your details were looked at by {{LOCATION}}.</p>
+  <h2 class="nhsuk-heading-m">How to find out more</h2>
+  <p>Contact {{LOCATION}}:</p>
+  <ul>
+    <li>for more information</li>
+    <li>to make a complaint</li>
+  </ul>
+  <address>
+    <p>
+      {{ADDRESS | safe }}
+    </p>
+    <p>Telephone: {{PHONE}}</p>
+  </address>
 </div>
 
 {% endblock %}

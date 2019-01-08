@@ -1,6 +1,26 @@
-{% set title = "We will show you where your details have been used" %}
+{% set title = "How to change your details" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
+{% set details = [
+  {
+    name: "Sally Wash",
+    dob: "5/5/1948",
+    gender: "Female",
+    placeOfBirth: "Skegness",
+    email: "sally.wash@example.com",
+    telephone: "01132111165",
+    mobile: "07116211211",
+    NHSNumber: "485 777 3456",
+    address: "Grand Parade <br />
+                      Great George Street <br />
+                      Skegness <br />
+                      Lincolnshire <br />
+                      PE25 2UE"
+  }
+]
+%}
+
+, Skegness
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,31 +49,27 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-
 {% block body %}
 <div class="nhsuk-u-reading-width">
   {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
-    "text": "Back to your details"
+    "href": "/" + PROTOTYPEURL + "/your-details/1-inline",
+    "text": "Back to previous page"
   }) }}
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>
-            By continuing you agree to our <a href="#">privacy notice</a>, which explains that we will use the information you give us to:
-          </p>
-          <ul>
-            <li>check who has looked at your records</li>
-          </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'">
-            Agree and continue
-          </button>
-      </div>
-    </div>
-  </div>
+  <h1 class="nhsuk-heading-l">
+    {{title}}
+  </h1>
+  <p>Services across the NHS use your records to manage your care. It's important that your details are up to date.</p>
+  <p>Using this service you can only update your contact details. You can change or add:</p>
+  <ul>
+    <li>an email address</li>
+    <li>your mobile phone number</li>
+    <li>your home phone</li>
+    <li>where you live</li>
+  </ul>
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/change-your-details/your-details'">
+    Continue
+  </button>
 </div>
-
 {% endblock %}
 
 {% block sidebar %}

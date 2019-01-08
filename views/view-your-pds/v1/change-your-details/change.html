@@ -1,4 +1,4 @@
-{% set title = "How to change your details" %}
+{% set title = "Visit your GP surgery to change your contact details" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% set details = [
@@ -59,16 +59,7 @@
     {{title}}
   </h1>
   <p>Services across the NHS use your records to manage your care. It's important that your details are up to date.</p>
-  <p>Using this service you can only update your contact details. You can change or add:</p>
-  <ul>
-    <li>an email address</li>
-    <li>your mobile phone number</li>
-    <li>your home phone</li>
-    <li>where you live</li>
-  </ul>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/change-your-details/your-details'">
-    Continue
-  </button>
+  <p>Your GP surgery will be able to update these for you.</p>
 </div>
 {% endblock %}
 

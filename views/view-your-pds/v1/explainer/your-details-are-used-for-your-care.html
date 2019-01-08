@@ -28,10 +28,15 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
+  {{ backLink({
+    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+    "text": "Back to your details"
+  }) }}
+
     <div class="audit-promo">
       <div class="audit-promo-wrapper">
         <div class="audit-promo__content">
