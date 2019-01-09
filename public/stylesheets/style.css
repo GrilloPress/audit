@@ -5784,6 +5784,20 @@ dl {
   border-bottom: 1px solid #d8dde0;
   padding: 4px 8px 4px 0; }
 
+.audit-dl__details {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+  @media (min-width: 40.0625em) {
+    .audit-dl__details {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+  @media print {
+    .audit-dl__details {
+      font-size: 14pt;
+      line-height: 1.2; } }
+
 address {
   font-style: normal; }
 

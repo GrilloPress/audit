@@ -1,4 +1,4 @@
-{% set title = "Your GP surgery" %}
+{% set title = "Your details" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% set NAME = "Beacon Medical Practice" %}
@@ -68,7 +68,7 @@
   }) }}
 
   <h1 class="nhsuk-heading-l">
-    {{title}}
+    Your GP Surgery
   </h1>
 
   <div class="nhsuk-panel-with-label">
@@ -97,34 +97,7 @@
     </dl>
   </div>
 
-
-
-  <h2 class="nhsuk-heading-m">Your previous GP surgeries</h2>
-  {% for gp in previous %}
-
-  <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2"><span class="audit-subheading">{{ gp.date }}</span>
-  {{ gp.name }}</h3>
-
-  <dl class="audit-dl">
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Your GP</dt>
-      <dd class="audit-dl__dd">
-        {{ gp.gp }}</dd>
-    </div>
-
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Phone number</dt>
-      <dd class="audit-dl__dd">{{ gp.phone }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl__dt">Address</dt>
-      <dd class="audit-dl__dd">{{ gp.address | safe }}</dd>
-    </div>
-
-  </dl>
-
-  {% endfor %}
+  <p><a href="/{{PROTOTYPEURL}}/your-GP/previous-GPs">See your previous GP surgeries</a></p>
 
 </div>
 {% endblock %}

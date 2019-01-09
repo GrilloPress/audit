@@ -66,6 +66,9 @@ dl {
     // display: table-row;
   }
 
+}
 
+.audit-dl__details {
 
+  @include nhsuk-typography-responsive(16);
 }

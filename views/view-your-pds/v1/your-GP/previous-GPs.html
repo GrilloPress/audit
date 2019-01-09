@@ -1,4 +1,4 @@
-{% set title = "Your GP surgery" %}
+{% set title = "Your previous GP surgeries" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% set NAME = "Beacon Medical Practice" %}
@@ -63,7 +63,7 @@
 {% block body %}
 <div class="nhsuk-u-reading-width">
   {{ backLink({
-    "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+    "href": "/" + PROTOTYPEURL + "/your-GP/your-GP--single-with-a-link",
     "text": "Back to previous page"
   }) }}
 
@@ -71,58 +71,33 @@
     {{title}}
   </h1>
 
-  <div class="nhsuk-panel-with-label">
-    <h2 class="nhsuk-panel-with-label__label">{{ NAME }}</h2>
-    <dl class="audit-dl--inline">
-      <div class="audit-dl--inline__container">
-        <dt class="audit-dl--inline__dt">Your GP</dt>
-        <dd class="audit-dl--inline__dd">{{ GP }}</dd>
-      </div>
-
-      <div class="audit-dl--inline__container">
-        <dt class="audit-dl--inline__dt">Phone number</dt>
-        <dd class="audit-dl--inline__dd">{{ PHONE }}</dd>
-      </div>
-
-      <div class="audit-dl--inline__container">
-        <dt class="audit-dl--inline__dt">Address</dt>
-        <dd class="audit-dl--inline__dd">{{ ADDRESS | safe }}</dd>
-      </div>
-
-      <div class="audit-dl--inline__container">
-        <dt class="audit-dl--inline__dt">Registered from:</dt>
-        <dd class="audit-dl--inline__dd">{{ DATE }}</dd>
-      </div>
-
-    </dl>
-  </div>
-
-
-
-  <h2 class="nhsuk-heading-m">Your previous GP surgeries</h2>
   {% for gp in previous %}
 
-  <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2"><span class="audit-subheading">{{ gp.date }}</span>
-  {{ gp.name }}</h3>
+<div>
+  <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-4">
+    <span class="audit-subheading">{{ gp.date }}</span>
+    {{ gp.name }}
+  </h2>
 
   <dl class="audit-dl">
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Your GP</dt>
-      <dd class="audit-dl__dd">
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Your GP</dt>
+      <dd class="audit-dl--inline__dd">
         {{ gp.gp }}</dd>
     </div>
 
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Phone number</dt>
-      <dd class="audit-dl__dd">{{ gp.phone }}</dd>
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Phone number</dt>
+      <dd class="audit-dl--inline__dd">{{ gp.phone }}</dd>
     </div>
 
     <div class="audit-dl--inline__container">
-      <dt class="audit-dl__dt">Address</dt>
-      <dd class="audit-dl__dd">{{ gp.address | safe }}</dd>
+      <dt class="audit-dl--inline__dt">Address</dt>
+      <dd class="audit-dl--inline__dd">{{ gp.address | safe }}</dd>
     </div>
-
   </dl>
+</div>
+
 
   {% endfor %}
 
