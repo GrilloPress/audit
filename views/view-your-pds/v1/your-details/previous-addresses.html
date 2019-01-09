@@ -66,18 +66,14 @@
   </h1>
 
   {% for p in previous %}
-
-<div>
-
-  <dl class="audit-dl">
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Your address from {{ p.date }}</dt>
-      <dd class="audit-dl__dd">{{ p.address | safe }}</dd>
+    <div>
+      <dl class="audit-dl">
+        <div class="audit-dl__container">
+          <dt class="audit-dl__dt">Your address from {{ p.date }}</dt>
+          <dd class="audit-dl__dd">{{ p.address | safe }}</dd>
+        </div>
+      </dl>
     </div>
-  </dl>
-</div>
-
-
   {% endfor %}
 
 </div>
