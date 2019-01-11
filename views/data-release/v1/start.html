@@ -1,0 +1,69 @@
+{% set title = "See if your health records have been shared for research" %}
+{% set serviceName = "See if your health records have been shared for research" %}
+{% set PROTOTYPEURL = "data-release/v1" %}
+{% set template = "single" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/nhsuk.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "#",
+    text: serviceName
+  }) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1>{{serviceName}}</h1>
+  <p>
+    Use this service to:
+  </p>
+  <ul>
+    <li>
+      find out if data from your health records has been shared for research and planning
+    </li>
+    <li>
+      which organisations have used data from your health records
+    </li>
+  </ul>
+  <p>If you have told the NHS not to share your health records for research and planning, this service can show you how that choice has been upheld.</p>
+  <h2>To use this service you'll need:</h2>
+  <ul>
+    <li>to be 16 or older</li>
+    <li>an NHS login - if you do not have one, we'll help you set one up</li>
+  </ul>
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
+    Start now
+  </button>
+</div>
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

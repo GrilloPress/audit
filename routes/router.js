@@ -16,6 +16,10 @@ router.get('/release-login', function(req, res, next) {
   res.render( 'release-dec/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you' );
 });
 
+router.get('/data-release-login', function(req, res, next) {
+  res.render( 'data-release/v1/explainer/1' );
+});
+
 router.get('/login-pds', function(req, res, next) {
   res.render( 'view-your-pds/v1/your-details' );
 });
