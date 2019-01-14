@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  {% include "partials/_header.html" %}
+  {% import "partials/_macros.html" as patterns %}
+  {% from 'header/macro.njk' import header %}
+  {% block scripts %}{% endblock %}
+  <script>
+    (function(d) {
+      d.className = d.className.replace(/\bno-js\b/, 'js-enabled')
+    })(document.documentElement)
+  </script>
+</head>
+<body>
+
+  {{ header({
+      "showNav": "true",
+      "showSearch": "true",
+      "primaryLinks": [
+        {
+          "url"  : "#",
+          "label" : "Health A-Z"
+        },
+        {
+          'url' : '#',
+          'label' : 'Live Well'
+        },
+        {
+          'url'  : '#',
+          'label' : 'Care and support'
+        },
+        {
+          'url'  : '#',
+          'label' : 'Health news'
+        },
+        {
+          'url' : '#',
+          'label' : 'Services near you'
+        }
+      ]
+    })
+  }}
+
+  {% block breadcrumb %}{% endblock %}
+
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          {% block body %}{% endblock %}
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {% include "layouts/nhsuk/_footer.html" %}
+  </body>
+</html>

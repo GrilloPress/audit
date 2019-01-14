@@ -5699,6 +5699,13 @@ b {
   margin: 0;
   padding: 16px; }
 
+.audit-sidebar__hr {
+  margin-top: 8px;
+  margin-bottom: 24px; }
+
+.audit-sidebar__sublist {
+  margin-bottom: 0; }
+
 .audit-interruption {
   margin-bottom: 36px;
   /* [1] */

@@ -1,0 +1,109 @@
+{% set title = 'How to look at your health records' %}
+{% set serviceName = "Your health records" %}
+{% set PROTOTYPEURL = "hub/v1" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/hub-child.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "/" + PROTOTYPEURL + "/index",
+    text: "Your health records"
+  }) }}
+{% endblock %}
+
+{% block pageheader %}
+  <h1>{{title}}</h1>
+{% endblock %}
+
+{% block body %}
+
+<div class="nhsuk-u-reading-width">
+
+  <h2>The different kinds of health records</h2>
+  <p>Health services such as your GP surgery or dentist have their own health record about you.</p>
+  <p>The different kinds of health records include:</p>
+  <ul>
+    <li>GP record</li>
+    <li>Hospital record</li>
+    <li>Vaccinations record</li>
+    <li>Summary Care Record</li>
+    <li>Dental record</li>
+    <li>Optician’s record</li>
+    <li>Sexual health record</li>
+    <li>Mental health record</li>
+  </ul>
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>You may not have all of these health records. For example, you will only have a sexual health record if you have been to a sexual health clinic.</p>
+  </div>
+
+<h2>Your GP record and your vaccinations record</h2>
+<p>You can look at your GP record and your vaccinations record online using GP online services.</p>
+<p>You can ask to set up GP online services at your GP surgery.</p>
+<p>
+  <a href="https://www.nhs.uk/using-the-nhs/nhs-services/gps/gp-online-services/">Start using GP online services</a>
+</p>
+
+<h2>Your Summary Care Record</h2>
+
+<p>Speak to your GP surgery to ask to look at your Summary Care Record.</p>
+
+<p>Some GP online services can show you your Summary Care Record.</p>
+
+<p>
+  <a href="https://www.nhs.uk/using-the-nhs/nhs-services/gps/gp-online-services/">Start using GP online services</a>
+</p>
+
+<p>
+  <a href="/{{PROTOTYPEURL}}/1-child/what-a-summary-care-record-is">Find out what a Summary Care Record is</a>
+</p>
+
+<h2>How to look at someone else’s health record</h2>
+
+<p>Health records are confidential so you can only access someone else's records if you’re authorised to do so</p>
+
+<p>
+  <a href="https://www.nhs.uk/common-health-questions/nhs-services-and-treatments/can-i-access-someone-elses-medical-records-health-records/">Find out if you can look at someone else’s health record</a>
+</p>
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<h2 class="nhsuk-heading-s"><a href="/{{PROTOTYPEURL}}/index">Your health records</a></h2>
+<hr>
+<ul class="audit-list--unstyled">
+  <li> <strong>How to look at your health records</strong> </li>
+  <li> <a href="/{{PROTOTYPEURL}}/2-how-your-health-records-are-shared">How your health records are shared</a> </li>
+  <li> <a href="https://www.nhs.uk/common-health-questions/nhs-services-and-treatments/can-i-access-someone-elses-medical-records-health-records/">How to look at someone else’s health record</a> </li>
+  <li> <a href="https://atf-prod1.scraud-live.thunderbird.service.nhs.uk/">Find out who’s looked at your health records</a> </li>
+  <li> <a href="https://ndop-n.herokuapp.com/release/01-overview">Choose if your health records are shared for research and planning</a> </li>
+</ul>
+{% endblock %}

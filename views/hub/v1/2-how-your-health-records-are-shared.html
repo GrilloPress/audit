@@ -1,0 +1,74 @@
+{% set title = 'How your health records are shared' %}
+{% set serviceName = "Your health records" %}
+{% set PROTOTYPEURL = "hub/v1" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/hub-child.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "/" + PROTOTYPEURL + "/index",
+    text: "Your health records"
+  }) }}
+{% endblock %}
+
+{% block pageheader %}
+  <h1>{{title}}</h1>
+{% endblock %}
+
+{% block body %}
+
+<div class="nhsuk-u-reading-width">
+  <h2>How your health records are shared for your care</h2>
+  <p>Health and care staff might look at your health records to care for you. </p>
+  <p>For example, they might look at your Summary Care Record to check if you have any allergies before they give you any medicine. </p>
+  <p>You can <a href="https://atf-prod1.scraud-live.thunderbird.service.nhs.uk/">use our service to find who’s looked at your Summary Care Record</a>.</p>
+
+  <h2>How your health records are shared for secondary purposes</h2>
+  <p>Some of the information from your health records can be used by companies for: </p>
+  <ul>
+    <li>research to find cures and better treatments for illnesses </li>
+    <li>planning where we need to improve or provide more health services</li>
+  </ul>
+  <p>You can <a href="https://ndop-n.herokuapp.com/release/01-overview">use our service to choose if your health records are used for research and planning</a>.</p>
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<h2 class="nhsuk-heading-s"><a href="/{{PROTOTYPEURL}}/index">Your health records</a></h2>
+<hr>
+<ul class="audit-list--unstyled">
+  <li> <a href="/{{PROTOTYPEURL}}/1-how-to-look-at-your-health-records">How to look at your health records</a> </li>
+  <li> <strong>How your health records are shared</strong> </li>
+  <li> <a href="https://www.nhs.uk/common-health-questions/nhs-services-and-treatments/can-i-access-someone-elses-medical-records-health-records/">How to look at someone else’s health record</a> </li>
+  <li> <a href="https://atf-prod1.scraud-live.thunderbird.service.nhs.uk/">Find out who’s looked at your health records</a> </li>
+  <li> <a href="https://ndop-n.herokuapp.com/release/01-overview">Choose if your health records are shared for research and planning</a> </li>
+</ul>
+{% endblock %}
