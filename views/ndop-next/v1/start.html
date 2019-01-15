@@ -1,0 +1,63 @@
+{% set title = "Choose if data from your health records can be used for research and planning" %}
+{% set serviceName = "Choose if data from your health records can be used for research and planning" %}
+{% set PROTOTYPEURL = "ndop-next/v1" %}
+{% set template = "single" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/nhsuk.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "#",
+    text: serviceName
+  }) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1>{{serviceName}}</h1>
+  <p>
+    Use this service to choose whether data from your health records can be used for research and planning.
+  </p>
+  <p>You can make or change your choice by using our online service or completing a paper form and posting it back to us. You can also ask for help using our telephone service. You must complete a paper form if you wish to make or change a choice on behalf of someone else.</p>
+  <h2 id="before-you-start">To use this service</h2>
+  <p>You'll need to prove your identity. To do this you can use an NHS login or set one up. You can also provide an email address or phone number registered with an NHS service to use the online service.</p>
+  <p>Ask your GP surgery for help if you need to confirm your contact information is up-to-date.</p>
+  <p>
+    You must also be aged 13 or over.
+  </p>
+
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity'">
+    Start now
+  </button>
+</div>
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

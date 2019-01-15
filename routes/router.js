@@ -21,7 +21,7 @@ router.get('/data-release-login', function(req, res, next) {
 });
 
 router.get('/login-pds', function(req, res, next) {
-  res.render( 'view-your-pds/v1/your-details' );
+  res.render( 'view-your-pds/v1/dashboard/your-details' );
 });
 
 router.get('/:view', function(req, res, next) {
