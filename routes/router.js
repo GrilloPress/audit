@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
   res.render( 'index' );
 });
 
+// NHS login redirects
+
 router.get('/login', function(req, res, next) {
   res.render( 'scr-audit/v5/explainer/health-services-such-as-your-GP-surgery-or-dentist-have-their-own-health-record-about-you' );
 });
@@ -23,6 +25,12 @@ router.get('/data-release-login', function(req, res, next) {
 router.get('/login-pds', function(req, res, next) {
   res.render( 'view-your-pds/v1/dashboard/your-details' );
 });
+
+router.get('/ndop-login', function(req, res, next) {
+  res.redirect( 'ndop-next/v1/explainer/data-from-your-health-records.html' );
+});
+
+//
 
 router.get('/:view', function(req, res, next) {
   var theView = req.params.view;
@@ -58,5 +66,32 @@ router.get('/:subdir/:subdir2/:subdir3/:subdir4/:view', function(req, res, next)
   var theDir4 = req.params.subdir4;
   res.render( theDir + '/' + theDir2 + '/' + theDir3 + '/' + theDir4 + '/' + theView );
 });
+
+
+//////// FORM POST FOR NDOP next
+
+router.post('/ndop-next/v1/prelogin/how-do-you-want-to-prove-your-identity', function(req, res, next) {
+
+  var identityRoute = req.body.identity;
+
+  if (identityRoute === "one-time-auth") {
+
+    console.log("ndop");
+    res.redirect( '/ndop-next/v1/one-time-auth/index' );
+
+  } else if (identityRoute === "nhs-login") {
+
+    res.redirect( '/ndop-next/v1/nhs-login/before-you-continue' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
 
 module.exports = router;
