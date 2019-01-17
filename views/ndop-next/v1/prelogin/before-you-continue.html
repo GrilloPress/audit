@@ -1,4 +1,4 @@
-{% set title = "How do you want to prove your identity?" %}
+{% set title = "We'll use the information you provide to make and apply your choice" %}
 {% set serviceName = "Choose if data from your health records can be shared for research and planning" %}
 {% set PROTOTYPEURL = "ndop-next/v1" %}
 {% block scripts %}
@@ -31,39 +31,27 @@
 
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
-  <form class="" action="/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity" method="post">
-    {{ radios({
-      "idPrefix": "identity-choice",
-      "name": "identity",
-      "fieldset": {
-        "legend": {
-          "text": title,
-          "classes": "nhsuk-fieldset__legend--l",
-          "isPageHeading": true
-        }
-      },
-      "items": [
-        {
-          "value": "one-time-auth",
-          "text": "Use the details I registered with my GP surgery",
-          "hint": {
-            "text": "Tell us your name, date of birth and NHS number or postcode. We'll use these details to send you a one-time security code to use this service."
-          }
-        },
-        {
-          "value": "nhs-login",
-          "text": "Use an NHS login",
-          "hint": {
-            "text": "If you don't have an NHS login we'll help you set one up."
-          }
-        }
-      ]
-    }) }}
 
-    <input type="submit" class="nhsuk-button" value="Continue">
-    </input>
-  </form>
+  <div class="nhsuk-u-reading-width">
+    <div class="audit-promo">
+      <div class="audit-promo-wrapper">
+        <div class="audit-promo__content">
+          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+          <p>
+            We will use that information to:
+          </p>
+          <ul>
+            <li>check who you are</li>
+            <li>retrieve your records</li>
+            <li>save your choice to the records we have for you</li>
+          </ul>
+          <p>Further information can be found in our <a href="#">privacy notice</a>.</p>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity'">
+            Agree and continue
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

@@ -1,4 +1,4 @@
-{% set title = "How do you want to prove your identity?" %}
+{% set title = "We'll use the information you provide to make and apply your choice" %}
 {% set serviceName = "Choose if data from your health records can be shared for research and planning" %}
 {% set PROTOTYPEURL = "ndop-next/v1" %}
 {% block scripts %}
@@ -28,14 +28,29 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'error-summary/macro.njk' import errorSummary %}
 
 
 {% block body %}
+
 <div class="nhsuk-u-reading-width">
+
+  {{ errorSummary({
+    "titleText": "There is a problem",
+    "errorList": [
+      {
+        "text": "No option selected",
+        "href": "#identity-choice"
+      }
+    ]
+  }) }}
   <form class="" action="/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity" method="post">
     {{ radios({
       "idPrefix": "identity-choice",
       "name": "identity",
+      "errorMessage": {
+        "text": "Select an option"
+      },
       "fieldset": {
         "legend": {
           "text": title,
