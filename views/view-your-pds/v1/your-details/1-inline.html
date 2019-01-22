@@ -80,13 +80,6 @@
     </div>
 
     <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Gender</dt>
-      <dd class="audit-dl--inline__dd">
-        {{ d.gender }}
-      </dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
       <dt class="audit-dl--inline__dt">NHS number</dt>
       <dd class="audit-dl--inline__dd">{{ d.NHSNumber }}</dd>
     </div>
@@ -120,13 +113,13 @@
 
 <p><a href="/{{PROTOTYPEURL}}/change-your-details/change">How to update these details</a></p>
 
-<span class="audit-dl-link">{{ details({
+{{ details({
   "classes": "nhsuk-expander",
   "text": "Where this information comes from",
   "HTML": "
   <p>This information comes from your GP surgery and other NHS services you have used or are registered with.</p>
   "
-}) }}</span>
+}) }}
 
 
 </div>
