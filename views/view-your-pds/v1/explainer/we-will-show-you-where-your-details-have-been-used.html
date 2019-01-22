@@ -1,4 +1,4 @@
-{% set title = "Your details can also be used for research and planning" %}
+{% set title = "We'll use your information to show you where your details have been looked at" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
@@ -28,7 +28,7 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -36,10 +36,14 @@
       <div class="audit-promo-wrapper">
         <div class="audit-promo__content">
           <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>Such as supporting health screening services.</p>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/everytime-your-details-are-used-is-tracked'">
-            Continue
+          <p>More information about how we use your details within this service can be found in our <a href="#">privacy notice</a>.</p>
+          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'">
+            Agree and continue
           </button>
+          {{ backLink({
+            "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
+            "text": "Back to your details"
+          }) }}
       </div>
     </div>
   </div>

@@ -28,23 +28,20 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-
-
 {% block body %}
 <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>For example, to ensure a hospital has up to date details about you.</p>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/your-details-can-also-be-used-for-research'">
-            Continue
-          </button>
+  <div class="audit-promo">
+    <div class="audit-promo-wrapper">
+      <div class="audit-promo__content">
+        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+        <p>For example, to ensure a hospital has the right details for you in their own records.</p>
+        <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/explainer/we-will-show-you-where-your-details-have-been-used'">
+          Continue
+        </button>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}
 
 {% block sidebar %}

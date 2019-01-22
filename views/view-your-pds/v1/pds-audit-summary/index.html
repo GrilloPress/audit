@@ -1,4 +1,4 @@
-{% set title = "We will show you where your details have been used" %}
+{% set title = "Your details were checked 46 times" %}
 {% set serviceName = "Check your personal details" %}
 {% set PROTOTYPEURL = "view-your-pds/v1" %}
 {% block scripts %}
@@ -32,25 +32,22 @@
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>
-            By continuing you agree to our <a href="#">privacy notice</a>, which explains that we will use the information you give us to:
-          </p>
-          <ul>
-            <li>check who has looked at your records</li>
-          </ul>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'">
-            Agree and continue
-          </button>
-          {{ backLink({
-            "href": "/" + PROTOTYPEURL + "/dashboard/your-details",
-            "text": "Back to your details"
-          }) }}
-      </div>
-    </div>
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In the last year</span>
+    {{title}}
+  </h1>
+
+  <h2 class="nhsuk-heading-m">Where it was used</h2>
+  <ol>
+    <li>30 times by your GP surgery</li>
+    <li>12 times by an NHS trust</li>
+    <li>4 times by a pharmacy</li>
+  </ol>
+
+  <div class="">
+    <p>
+      <a href='/{{PROTOTYPEURL}}/timeline/where-your-details-have-been-looked-at'>See a timeline of where and when your details have been used</a>
+    </p>
   </div>
 </div>
 
