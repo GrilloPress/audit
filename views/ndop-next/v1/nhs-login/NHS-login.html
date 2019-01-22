@@ -1,4 +1,4 @@
-{% set title = "To use this service we need to use information about you" %}
+{% set title = "NHS login" %}
 {% set serviceName = "Choose if data from your health records can be shared for research and planning" %}
 {% set PROTOTYPEURL = "ndop-next/v1" %}
 {% block scripts %}
@@ -31,32 +31,16 @@
 
 
 {% block body %}
-
   <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+    <div class="audit-interruption">
+      <div class="audit-interruption-wrapper">
+        <div class="audit-interruption__content">
+          <h1 class="audit-interruption__heading nhsuk-heading-l">{{title}}</h1>
           <p>
-             This is so that we can:
+            The user would now login.
           </p>
-          <ul>
-            <li>check who you are</li>
-            <li>make your data sharing choice</li>
-          </ul>
-          <p>More details can be found in our <a href="#">privacy policy</a>. </p>
-          <script type="text/javascript">
-          // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login card. If it is on heroku, goes to the URL provided
-          function auth(url) {
-            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
-              window.location.href='NHS-login'
-            } else {
-              window.location.href='https://nhs-cid.herokuapp.com/create-account/v14/start?service=app4&serviceName=Choose%20if%20data%20from%20your%20health%20records%20can%20be%20shared%20for%20research%20and%20planning&returnUrl=https://nhs-audit.herokuapp.com/ndop-login'
-            }
-          }
-          </script>
-          <button type="submit" class="nhsuk-button" onclick="auth()">
-            Agree and continue
+          <button type="submit" class="nhsuk-button nhsuk-button--reverse" onclick="window.location.href='/{{PROTOTYPEURL}}/question/explainer/data-from-your-health-records'">
+            Continue
           </button>
       </div>
     </div>

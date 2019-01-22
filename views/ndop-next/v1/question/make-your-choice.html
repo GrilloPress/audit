@@ -1,4 +1,4 @@
-{% set title = "To use this service we need to use information about you" %}
+{% set title = "Make your choice" %}
 {% set serviceName = "Choose if data from your health records can be shared for research and planning" %}
 {% set PROTOTYPEURL = "ndop-next/v1" %}
 {% block scripts %}
@@ -31,36 +31,39 @@
 
 
 {% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1 class="nhsuk-heading-l">{{title}}</h1>
+  <p>Data from your health records can be used for:</p>
+  <ul>
+    <li>research to find cures and better treatments for illnesses </li>
+    <li>planning where we need to improve or provide more health services </li>
+  </ul>
+  <form class="" action="/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity" method="post">
+    {{ radios({
+      "idPrefix": "data-choice",
+      "name": "data",
+      "fieldset": {
+        "legend": {
+          "text": "I allow my data to be used for research and planning",
+          "classes": "nhsuk-fieldset__legend--m",
+          "isPageHeading": false
+        }
+      },
+      "items": [
+        {
+          "value": "yes-share",
+          "text": "Yes"
+        },
+        {
+          "value": "no-opt-out",
+          "text": "No"
+        }
+      ]
+    }) }}
 
-  <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>
-             This is so that we can:
-          </p>
-          <ul>
-            <li>check who you are</li>
-            <li>make your data sharing choice</li>
-          </ul>
-          <p>More details can be found in our <a href="#">privacy policy</a>. </p>
-          <script type="text/javascript">
-          // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login card. If it is on heroku, goes to the URL provided
-          function auth(url) {
-            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
-              window.location.href='NHS-login'
-            } else {
-              window.location.href='https://nhs-cid.herokuapp.com/create-account/v14/start?service=app4&serviceName=Choose%20if%20data%20from%20your%20health%20records%20can%20be%20shared%20for%20research%20and%20planning&returnUrl=https://nhs-audit.herokuapp.com/ndop-login'
-            }
-          }
-          </script>
-          <button type="submit" class="nhsuk-button" onclick="auth()">
-            Agree and continue
-          </button>
-      </div>
-    </div>
-  </div>
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
+  </form>
 </div>
 
 {% endblock %}

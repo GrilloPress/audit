@@ -33,19 +33,13 @@
 {% block body %}
 
   <div class="nhsuk-u-reading-width">
-    <div class="audit-promo">
-      <div class="audit-promo-wrapper">
-        <div class="audit-promo__content">
-          <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-          <p>
-            We will do this by asking you for an NHS login or by using the details you have registered with your GP surgery.
-          </p>
-          <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity'">
-            Continue
-          </button>
-      </div>
-    </div>
-  </div>
+    <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+    <p>
+      We will do this by asking you for an NHS login or by using the details you have registered with your GP surgery.
+    </p>
+    <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/how-do-you-want-to-prove-your-identity'">
+      Continue
+    </button>
 </div>
 
 {% endblock %}
