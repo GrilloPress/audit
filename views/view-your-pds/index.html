@@ -1,6 +1,6 @@
-{% set title = 'Design decisions' %}
+{% set title = 'PDS Audit' %}
 {% set serviceName = "National data opt out programme" %}
-{% set PROTOTYPEURL = "decisions" %}
+{% set PROTOTYPEURL = "view-your-pds" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -33,33 +33,34 @@
 {% block hero %}
 {{ hero({
 "heading": title,
-"text": "Core concepts and patterns."
+"text": "Service to let users check their personal details held by the NHS"
 }) }}
 {% endblock %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
+  <h2>Prototypes</h2>
   <ul class="audit-list--unstyled audit-list-cards">
     <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-sign-in">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Help users log back in</h2>
-        <p>When a user's session expires, give them help to log back in</p>
-      </a>
-    </li>
-    <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-understand-data-use">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Tell users what data the service will use</h2>
-        <p>Before a user has their data processed, be clear what will happen</p>
-      </a>
-    </li>
-    <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-understand-complex-health-data">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Help users understand complex health data</h2>
-        <p>Provide information that is required at the moment it is needed to ensure users are set up for success</p>
+      <a href="/{{PROTOTYPEURL}}/v1/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
+        <p>View your personal details</p>
       </a>
     </li>
   </ul>
 </div>
+
+<h2>Scenarios</h2>
+<h3 class="nhsuk-heading-m">Service</h3>
+
+<h3 class="nhsuk-heading-m">Errors</h3>
+<ul>
+  <li><a href="/scr-audit/v5/errors/catch-all-error">Generic error</a></li>
+  <li><a href="/scr-audit/v5/errors/page-not-found">Page not found (404)</a></li>
+  <li><a href="/scr-audit/v5/errors/service-unavailable-planned">Maintenance</a></li>
+  <li><a href="/scr-audit/v5/errors/service-unavailable-unplanned">Service unavailable</a></li>
+  <li><a href="/scr-audit/v5/errors/session-expired">Session expired</a></li>
+</ul>
 
 {{ backLink({
   "href": "/",

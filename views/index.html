@@ -34,50 +34,40 @@
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h2>Design decisions and patterns</h2>
-  <p>Agreed approaches and <a href="decisions/index">design decisions</a></p>
-  <h2>End to end prototypes</h2>
-  <h3>Find out who's looked at your health records</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/hub/v1/index">
-        NHS UK content pages
+  <ul class="audit-list--unstyled audit-list-cards">
+    <li class="audit-list-cards__item">
+      <a href="/scr-audit/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Summary Care Record audit</h2>
+        <p>Let users see how their Summary Care Record has been used</p>
       </a>
     </li>
-    <li>
-      <a href="/release-dec/start">
-        Full service journey with NHS login prototype - Late dec
+    <li class="audit-list-cards__item">
+      <a href="/view-your-pds/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Personal details (PDS) viewer and audit</h2>
+        <p>Let users check their details</p>
       </a>
     </li>
-  </ol>
-  <h2>Service prototypes</h2>
-  <h3>Find out who's looked at your health records</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/scr-audit/v5/start">
-        Find out who's looked at your health records - Late dec
+    <li class="audit-list-cards__item">
+      <a href="/data-release/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Data release service</h2>
+        <p>Let users see how their personal data has been used for research and planning</p>
       </a>
     </li>
-  </ol>
-  <h2>NHS website prototypes</h2>
-  <h2>Concept prototypes</h2>
-  <h3>See if your health records have been shared for research</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/data-release/v1/start">
-        Initial concept - Late Jan 2018
+    <li class="audit-list-cards__item">
+      <a href="/hub/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">NHS website exploration</h2>
+        <p>New information architecture models for the NHS website</p>
       </a>
     </li>
-  </ol>
-  <h3>Check the personal details the NHS has for you</h3>
-  <ol class="audit-list--unstyled">
-    <li>
-      <a href="/view-your-pds/v1/start">
-        Initial concept - Early Jan 2018
+    <li class="audit-list-cards__item">
+      <a href="/decisions/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Design decisions</h2>
+        <p>Design decisions, patterns and research</p>
       </a>
     </li>
-  </ol>
+  </ul>
 </div>
+
 {% endblock %}
 {% block sidebar %}
 {% endblock %}

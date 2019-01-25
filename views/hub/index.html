@@ -1,6 +1,6 @@
-{% set title = 'Design decisions' %}
+{% set title = 'NHS website exploration' %}
 {% set serviceName = "National data opt out programme" %}
-{% set PROTOTYPEURL = "decisions" %}
+{% set PROTOTYPEURL = "hub" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -33,29 +33,18 @@
 {% block hero %}
 {{ hero({
 "heading": title,
-"text": "Core concepts and patterns."
+"text": "Exploration of content needed for the NHS website"
 }) }}
 {% endblock %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
+  <h2>Prototypes</h2>
   <ul class="audit-list--unstyled audit-list-cards">
     <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-sign-in">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Help users log back in</h2>
-        <p>When a user's session expires, give them help to log back in</p>
-      </a>
-    </li>
-    <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-understand-data-use">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Tell users what data the service will use</h2>
-        <p>Before a user has their data processed, be clear what will happen</p>
-      </a>
-    </li>
-    <li class="audit-list-cards__item">
-      <a href="/{{PROTOTYPEURL}}/help-users-understand-complex-health-data">
-        <h2 class="audit-list-cards__heading nhsuk-heading-m">Help users understand complex health data</h2>
-        <p>Provide information that is required at the moment it is needed to ensure users are set up for success</p>
+      <a href="/{{PROTOTYPEURL}}/v1/index">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
+        <p>v1 hub layout for private beta</p>
       </a>
     </li>
   </ul>

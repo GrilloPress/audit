@@ -1,0 +1,110 @@
+{% set title = 'Summary Care Audit' %}
+{% set serviceName = "National data opt out programme" %}
+{% set PROTOTYPEURL = "scr-audit" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block hero %}
+{{ hero({
+"heading": title,
+"text": "Service to let users see how their Summary Care Record has been used"
+}) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h2>Prototypes</h2>
+  <ul class="audit-list--unstyled audit-list-cards">
+    <li class="audit-list-cards__item">
+      <a href="/{{PROTOTYPEURL}}/v5/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v5</h2>
+        <p>Further refined timeline with NHS login</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="/release-dec/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">Developer release (Dec 2018 - Jan 2019)</h2>
+        <p>Simple explainers, timeline and item view</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="http://audit-transparency.herokuapp.com/v4/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v4</h2>
+        <p>Refined timeline</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="http://audit-transparency.herokuapp.com/v3/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v3</h2>
+        <p>Shorter explainer journey</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="http://audit-transparency.herokuapp.com/v2/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v2</h2>
+        <p>Explainer, Summary card and additional details</p>
+      </a>
+    </li>
+    <li class="audit-list-cards__item">
+      <a href="http://audit-transparency.herokuapp.com/v1/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
+        <p>Initial exploration</p>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+
+
+
+
+
+<h2>Scenarios</h2>
+<h3 class="nhsuk-heading-m">Service</h3>
+<ul>
+  <li><a href="/{{PROTOTYPEURL}}/v5/scenarios/no-records">No records found</a></li>
+  <li>User has opted out of a SCR</li>
+</ul>
+<h3 class="nhsuk-heading-m">Errors</h3>
+<ul>
+  <li><a href="/{{PROTOTYPEURL}}/v5/errors/catch-all-error">Generic error</a></li>
+  <li><a href="/{{PROTOTYPEURL}}/v5/errors/page-not-found">Page not found (404)</a></li>
+  <li><a href="/{{PROTOTYPEURL}}/v5/errors/service-unavailable-planned">Maintenance</a></li>
+  <li><a href="/{{PROTOTYPEURL}}/v5/errors/service-unavailable-unplanned">Service unavailable</a></li>
+  <li><a href="/{{PROTOTYPEURL}}/v5/errors/session-expired">Session expired</a></li>
+</ul>
+
+{{ backLink({
+  "href": "/",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

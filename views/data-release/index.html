@@ -1,5 +1,5 @@
-{% set title = 'Release Late January' %}
-{% set serviceName = "See if your health records have been shared for research" %}
+{% set title = 'Data release' %}
+{% set serviceName = "National data opt out programme" %}
 {% set PROTOTYPEURL = "data-release" %}
 {% block scripts %}
 {% endblock %}
@@ -25,31 +25,47 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block hero %}
+{{ hero({
+"heading": title,
+"text": "Service to let users see how their personal data has been used by the NHS"
+}) }}
+{% endblock %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h1>{{title}} - {{serviceName}}</h1>
-
-  <h2>Prototype v1</h2>
-  <ol>
-    <li><a href="/{{PROTOTYPEURL}}/v1/start">Start</a></li>
-  </ol>
-
-  <h3>Scenarios</h3>
-  <ul>
-    <li>None</li>
-  </ul>
-
-  <h3>Error pages</h2>
-  <ul>
-    <li>None</li>
-  </ul>
-
-  <h3>Other</h3>
-  <ul>
-    <li><a href="/{{PROTOTYPEURL}}/nhsnumber">NHS number example</a></li>
+  <h2>Prototypes</h2>
+  <ul class="audit-list--unstyled audit-list-cards">
+    <li class="audit-list-cards__item">
+      <a href="/{{PROTOTYPEURL}}/v1/start">
+        <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
+        <p>See how your personal data has been used by the NHS for research and planning</p>
+      </a>
+    </li>
   </ul>
 </div>
+
+<h2>Scenarios</h2>
+<h3 class="nhsuk-heading-m">Service</h3>
+
+<h3 class="nhsuk-heading-m">Errors</h3>
+<ul>
+  <li><a href="/scr-audit/v5/errors/catch-all-error">Generic error</a></li>
+  <li><a href="/scr-audit/v5/errors/page-not-found">Page not found (404)</a></li>
+  <li><a href="/scr-audit/v5/errors/service-unavailable-planned">Maintenance</a></li>
+  <li><a href="/scr-audit/v5/errors/service-unavailable-unplanned">Service unavailable</a></li>
+  <li><a href="/scr-audit/v5/errors/session-expired">Session expired</a></li>
+</ul>
+
+{{ backLink({
+  "href": "/",
+  "text": "Back to previous page"
+}) }}
 {% endblock %}
 {% block sidebar %}
 {% endblock %}
