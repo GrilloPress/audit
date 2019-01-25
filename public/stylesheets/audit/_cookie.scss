@@ -1,0 +1,19 @@
+.nhsuk-feedback-banner--top {
+
+  top: 0;
+  bottom: auto;
+  position: inherit;
+
+}
+
+.nhsuk-feedback-banner__heading--xs {
+
+  font-weight: $nhsuk-font-bold;
+  @include nhsuk-typography-responsive(19);
+
+}
+
+.nhsuk-feedback-banner__message--xs {
+
+  @include nhsuk-typography-responsive(16);
+}

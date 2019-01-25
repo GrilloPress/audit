@@ -1,0 +1,8 @@
+.audit-sidebar {
+
+  margin-top: nhsuk-spacing(4);
+
+  @include mq($from: tablet) {
+    margin-top: nhsuk-spacing(8);
+  }
+}
