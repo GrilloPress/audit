@@ -5680,6 +5680,40 @@ b {
   font-size: 80%;
   display: block; }
 
+.nhsuk-feedback-banner--top {
+  top: 0;
+  bottom: auto;
+  position: inherit; }
+
+.nhsuk-feedback-banner__heading--xs {
+  font-weight: 600;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+  @media (min-width: 40.0625em) {
+    .nhsuk-feedback-banner__heading--xs {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368; } }
+  @media print {
+    .nhsuk-feedback-banner__heading--xs {
+      font-size: 14pt;
+      line-height: 1.15; } }
+
+.nhsuk-feedback-banner__message--xs {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+  @media (min-width: 40.0625em) {
+    .nhsuk-feedback-banner__message--xs {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+  @media print {
+    .nhsuk-feedback-banner__message--xs {
+      font-size: 14pt;
+      line-height: 1.2; } }
+
 .audit-list-cards a {
   text-decoration: none;
   color: #212b32;
@@ -5804,6 +5838,12 @@ dl {
     .audit-dl__details {
       font-size: 14pt;
       line-height: 1.2; } }
+
+.audit-sidebar {
+  margin-top: 24px; }
+  @media (min-width: 40.0625em) {
+    .audit-sidebar {
+      margin-top: 56px; } }
 
 address {
   font-style: normal; }

@@ -6,10 +6,12 @@
 @import "audit/cards";
 @import "audit/list";
 @import "audit/headings";
+@import "audit/cookie";
 // prototype scss
 @import "prototype/prototype";
 @import "prototype/interruption";
 @import "prototype/definition-list";
+@import "prototype/sidebar";
 
 // Override default browser address italics
 address {

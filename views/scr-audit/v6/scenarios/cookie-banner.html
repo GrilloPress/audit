@@ -1,0 +1,85 @@
+{% set title = "We need to use your details to check who's looked at your health records" %}
+{% set serviceName = "Find out where your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/v6" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'feedback-banner/macro.njk' import feedbackBanner %}
+
+
+{% block cookie %}
+<div id="nhsuk-feedback-banner" class="nhsuk-feedback-banner nhsuk-feedback-banner--top " style="display: block;">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-feedback-banner__content">
+          <h2 class="nhsuk-feedback-banner__heading nhsuk-feedback-banner__heading--xs">We use files called 'cookies' to keep this service secure</h2>
+          <p class="nhsuk-feedback-banner__message nhsuk-feedback-banner__message--xs"><a href="/{{PROTOTYPEURL}}/scenarios/cookie-policy" class="nhsuk-u-nowrap">Find out how we use cookies</a>.</p>
+          <button id="nhsuk-feedback-banner-close" class="nhsuk-feedback-banner__close" type="button">Close<span class="nhsuk-u-visually-hidden"> cookie banner</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <div class="audit-promo">
+    <div class="audit-promo-wrapper">
+      <div class="audit-promo__content">
+        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+        <p>
+          By using this service you agree to our <a href="#">privacy notice</a>, which explains that we will use the information you give us to:
+        </p>
+        <ul>
+          <li>check who you are</li>
+          <li>check who has looked at your records</li>
+        </ul>
+        <script type="text/javascript">
+        // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login care. If it is on heroku, goes to the URL provided
+        function auth(url) {
+          console.log("no dice mate");
+        }
+        </script>
+
+        <button type="submit" class="nhsuk-button" onclick="auth()">
+          Agree and continue
+        </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
