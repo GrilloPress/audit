@@ -31,16 +31,16 @@
 {% from 'label/macro.njk' import label %}
 
 {% block body %}
-<h1>Enter the person's NHS number</h1>
+<h1>Enter Case ID</h1>
 {{ input({
   "label": {
-    "text": "NHS number"
+    "text": "Case ID"
   },
-  "id": "inputnhsnumber",
-  "name": "nhsnumber",
+  "id": "inputcaseID",
+  "name": "caseID",
   "classes": "nhsuk-input--width-10"
 }) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/confirmperson'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-nhs-number'">
               Continue
             </button>
 {% endblock %}

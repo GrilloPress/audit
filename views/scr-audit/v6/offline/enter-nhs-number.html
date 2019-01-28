@@ -29,43 +29,18 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-{% from 'checkboxes/macro.njk' import checkboxes %}
-
 
 {% block body %}
-{{ checkboxes({
-  "idPrefix": "nationality",
-  "name": "nationality",
-  "fieldset": {
-    "legend": {
-      "text": "Select the report you want to send",
-      "classes": "nhsuk-fieldset__legend--xl",
-                "isPageHeading": true
-    }
+<h1>Enter the person's NHS number</h1>
+{{ input({
+  "label": {
+    "text": "NHS number"
   },
-  "hint": {
-  "text": "Select all that apply"
-},
-  "items": [
-    {
-      "value": "SCR",
-      "text": "Summary Care Record"
-    },
-    {
-      "value": "PDS",
-      "text": "Patient Demographic Service"
-    },
-    {
-      "value": "Data Release Register",
-      "text": "Data Release Register"
-    },
-    {
-      "value": "Research and planning",
-      "text": "Research and planning"
-    }
-  ]
+  "id": "inputnhsnumber",
+  "name": "nhsnumber",
+  "classes": "nhsuk-input--width-10"
 }) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/confirmcreatereport'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/confirm-person'">
               Continue
             </button>
 {% endblock %}
