@@ -1,0 +1,77 @@
+{% set title = "Log in" %}
+{% set serviceName = "Send a report" %}
+{% set PROTOTYPEURL = "scr-audit/offline/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+
+{% block body %}
+<dl class="audit-dl--inline">
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Name</dt>
+      <dd class="audit-dl--inline__dd">Frank Spencer</dd>
+    </div>
+
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Place of birth</dt>
+      <dd class="audit-dl--inline__dd">Skegness</dd>
+    </div>
+
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">NHS number</dt>
+      <dd class="audit-dl--inline__dd">485 777 3456</dd>
+    </div>
+</dl>
+{{ radios({
+  "idPrefix": "example",
+  "name": "example",
+  "fieldset": {
+    "legend": {
+      "classes": "nhsuk-label--xl",
+      "text": "Is this the right person?",
+      "isPageHeading": true
+    }
+  },
+  "items": [
+    {
+      "value": "yes",
+      "text": "Yes"
+    },
+    {
+      "value": "no",
+      "text": "No"
+    }
+  ]
+}) }}
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/select-report'">
+              Continue
+            </button>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
