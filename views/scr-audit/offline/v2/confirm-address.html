@@ -32,6 +32,13 @@
 {% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+    <h1 class="nhsuk-fieldset__heading">
+      Check the address
+    </h1>
+  </legend>
 <dl class="audit-dl--inline">
  <div class="audit-dl--inline__container">
   <dt class="audit-dl--inline__dt">Address</dt>
@@ -42,31 +49,27 @@
                       Skegness <br>
                       Lincolnshire <br>
                       PE25 2UE
-
       </dd>
     </div>
 </dl>
-{{ radios({
-  "idPrefix": "example",
-  "name": "example",
-  "fieldset": {
-    "legend": {
-      "classes": "nhsuk-label--xl",
-      "text": "Is this the address we should send the report to?",
-      "isPageHeading": true
-    }
-  },
-  "items": [
-    {
-      "value": "yes",
-      "text": "Yes"
-    },
-    {
-      "value": "no",
-      "text": "No"
-    }
-  ]
-}) }}
+<h2>Is this the address we should send the report to?</h2>
+  <div class="nhsuk-radios">
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+        Yes
+      </label>
+    </div>
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        No
+      </label>
+    </div>
+  </div>
+  </fieldset>
+</div>
 <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/report-sent'">
               Continue
             </button>
