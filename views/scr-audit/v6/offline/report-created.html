@@ -31,28 +31,30 @@
 {% from 'label/macro.njk' import label %}
 
 {% block body %}
-<h1>Log in</h1>
-{{ input({
-  "label": {
-    "text": "Username"
+<h1>We've created the report</h1>
+{{ radios({
+  "idPrefix": "example",
+  "name": "example",
+  "fieldset": {
+    "legend": {
+      "classes": "nhsuk-label--m",
+      "text": "How should we send the report?"
+    }
   },
-  "id": "inputusername",
-  "name": "username",
-  "classes": "nhsuk-input--width-10"
+  "items": [
+    {
+      "value": "bypost",
+      "text": "By post"
+    },
+    {
+      "value": "byemail",
+      "text": "By email"
+    }
+  ]
 }) }}
-{{ input({
-  "label": {
-    "text": "Password"
-  },
-  "id": "inputpassword",
-  "name": "password",
-  "classes": "nhsuk-input--width-10"
-}) }}
-
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-case-ID'">
-              Log in
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/select-report'">
+              Continue
             </button>
-
 {% endblock %}
 
 {% block sidebar %}

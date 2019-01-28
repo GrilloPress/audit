@@ -29,30 +29,24 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
-<h1>Log in</h1>
-{{ input({
-  "label": {
-    "text": "Username"
-  },
-  "id": "inputusername",
-  "name": "username",
-  "classes": "nhsuk-input--width-10"
-}) }}
-{{ input({
-  "label": {
-    "text": "Password"
-  },
-  "id": "inputpassword",
-  "name": "password",
-  "classes": "nhsuk-input--width-10"
-}) }}
+<h1>We've sent the report to:</h2>
+<dl class="audit-dl--inline">
+ <div class="audit-dl--inline__container">
+  <dt class="audit-dl--inline__dt">Address</dt>
+   <dd class="audit-dl--inline__dd">
+                      Frank Spencer <br>
+                      Grand Parade <br>
+                      Great George Street <br>
+                      Skegness <br>
+                      Lincolnshire <br>
+                      PE25 2UE
 
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-case-ID'">
-              Log in
-            </button>
-
+      </dd>
+    </div>
+</dl>
 {% endblock %}
 
 {% block sidebar %}

@@ -29,30 +29,45 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
-<h1>We've created the report</h1>
+<dl class="audit-dl--inline">
+ <div class="audit-dl--inline__container">
+  <dt class="audit-dl--inline__dt">Address</dt>
+   <dd class="audit-dl--inline__dd">
+                      Frank Spencer <br>
+                      Grand Parade <br>
+                      Great George Street <br>
+                      Skegness <br>
+                      Lincolnshire <br>
+                      PE25 2UE
+
+      </dd>
+    </div>
+</dl>
 {{ radios({
   "idPrefix": "example",
   "name": "example",
   "fieldset": {
     "legend": {
-      "classes": "nhsuk-label--m",
-      "text": "How should we send the report?"
+      "classes": "nhsuk-label--xl",
+      "text": "Is this the address we should send the report to?",
+      "isPageHeading": true
     }
   },
   "items": [
     {
-      "value": "bypost",
-      "text": "By post"
+      "value": "yes",
+      "text": "Yes"
     },
     {
-      "value": "byemail",
-      "text": "By email"
+      "value": "no",
+      "text": "No"
     }
   ]
 }) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/selectreport'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/report-sent'">
               Continue
             </button>
 {% endblock %}

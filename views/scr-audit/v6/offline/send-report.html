@@ -29,46 +29,31 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
-<h1>Confirm you have the right person</h1>
-<dl class="audit-dl--inline">
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Name</dt>
-      <dd class="audit-dl--inline__dd">Frank</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Place of birth</dt>
-      <dd class="audit-dl--inline__dd">Skegness</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">NHS number</dt>
-      <dd class="audit-dl--inline__dd">485 777 3456</dd>
-    </div>
-</dl>
 {{ radios({
   "idPrefix": "example",
   "name": "example",
   "fieldset": {
     "legend": {
-      "classes": "nhsuk-label--m",
-      "text": "Is this the right person?"
+      "classes": "nhsuk-label--xl",
+      "text": "How should we send the report?",
+      "isPageHeading": true
     }
   },
   "items": [
     {
-      "value": "yes",
-      "text": "Yes"
+      "value": "bypost",
+      "text": "By post"
     },
     {
-      "value": "no",
-      "text": "No"
+      "value": "byemail",
+      "text": "By email"
     }
   ]
 }) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/selectreport'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/confirm-address'">
               Continue
             </button>
 {% endblock %}

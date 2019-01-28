@@ -31,16 +31,44 @@
 {% from 'label/macro.njk' import label %}
 
 {% block body %}
-<h1>Enter Case ID</h1>
-{{ input({
-  "label": {
-    "text": "Case ID"
+<dl class="audit-dl--inline">
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Name</dt>
+      <dd class="audit-dl--inline__dd">Frank Spencer</dd>
+    </div>
+
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">Place of birth</dt>
+      <dd class="audit-dl--inline__dd">Skegness</dd>
+    </div>
+
+    <div class="audit-dl--inline__container">
+      <dt class="audit-dl--inline__dt">NHS number</dt>
+      <dd class="audit-dl--inline__dd">485 777 3456</dd>
+    </div>
+</dl>
+{{ radios({
+  "idPrefix": "example",
+  "name": "example",
+  "fieldset": {
+    "legend": {
+      "classes": "nhsuk-label--xl",
+      "text": "Is this the right person?",
+      "isPageHeading": true
+    }
   },
-  "id": "inputcaseID",
-  "name": "caseID",
-  "classes": "nhsuk-input--width-10"
+  "items": [
+    {
+      "value": "yes",
+      "text": "Yes"
+    },
+    {
+      "value": "no",
+      "text": "No"
+    }
+  ]
 }) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enternhsnumber'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/select-report'">
               Continue
             </button>
 {% endblock %}

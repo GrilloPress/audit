@@ -29,30 +29,45 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'checkboxes/macro.njk' import checkboxes %}
+
 
 {% block body %}
-<h1>Log in</h1>
-{{ input({
-  "label": {
-    "text": "Username"
+{{ checkboxes({
+  "idPrefix": "nationality",
+  "name": "nationality",
+  "fieldset": {
+    "legend": {
+      "text": "Select the report you want to send",
+      "classes": "nhsuk-fieldset__legend--xl",
+                "isPageHeading": true
+    }
   },
-  "id": "inputusername",
-  "name": "username",
-  "classes": "nhsuk-input--width-10"
+  "hint": {
+  "text": "Select all that apply"
+},
+  "items": [
+    {
+      "value": "SCR",
+      "text": "Summary Care Record"
+    },
+    {
+      "value": "PDS",
+      "text": "Patient Demographic Service"
+    },
+    {
+      "value": "Data Release Register",
+      "text": "Data Release Register"
+    },
+    {
+      "value": "Research and planning",
+      "text": "Research and planning"
+    }
+  ]
 }) }}
-{{ input({
-  "label": {
-    "text": "Password"
-  },
-  "id": "inputpassword",
-  "name": "password",
-  "classes": "nhsuk-input--width-10"
-}) }}
-
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-case-ID'">
-              Log in
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/confirm-create-report'">
+              Continue
             </button>
-
 {% endblock %}
 
 {% block sidebar %}
