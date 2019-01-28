@@ -1,6 +1,6 @@
 {% set title = "Offline service" %}
 {% set serviceName = "Send a report" %}
-{% set PROTOTYPEURL = "scr-audit/v6/offline" %}
+{% set PROTOTYPEURL = "scr-audit/offline" %}
 {% block scripts %}
 {% endblock %}
 
@@ -34,9 +34,19 @@
 <h1>{{title}}</h1>
 <p>Exploration of offline service for the Summary Care Record audit service</p>
 
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/login'">
-              Start now
-            </button>
+<h2>Prototypes</h2>
+<ul class="audit-list--unstyled audit-list-cards">
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/v2/login">
+      <h2 class="audit-list-cards__heading nhsuk-heading-m">v2</h2>
+    </a>
+  </li>
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/v1/login">
+      <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
+    </a>
+  </li>
+</ul>
 
 {% endblock %}
 
