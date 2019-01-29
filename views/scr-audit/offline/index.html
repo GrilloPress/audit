@@ -29,13 +29,14 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
 <h1>{{title}}</h1>
 <p>Exploration of offline service for the Summary Care Record audit service</p>
 
 <h2>Prototypes</h2>
-<ul class="audit-list--unstyled audit-list-cards">
+<ol class="audit-list--unstyled audit-list-cards">
   <li class="audit-list-cards__item">
     <a href="/{{PROTOTYPEURL}}/v2/login">
       <h2 class="audit-list-cards__heading nhsuk-heading-m">v2</h2>
@@ -46,7 +47,12 @@
       <h2 class="audit-list-cards__heading nhsuk-heading-m">v1</h2>
     </a>
   </li>
-</ul>
+</ol>
+
+{{ backLink({
+  "href": "/scr-audit/index",
+  "text": "Back to previous page"
+}) }}
 
 {% endblock %}
 

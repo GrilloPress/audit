@@ -29,13 +29,14 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 
 {% block body %}
 <h1>{{title}}</h1>
 <p>Exploration of the way to display the metadata available for the Summary Care Record audit service.</p>
 
 <h2>Prototypes</h2>
-<ul class="audit-list--unstyled audit-list-cards">
+<ol class="audit-list--unstyled audit-list-cards">
   <li class="audit-list-cards__item">
     <a href="/{{PROTOTYPEURL}}/heading-lists/list">
       <h2 class="audit-list-cards__heading nhsuk-heading-m">Heading lists</h2>
@@ -48,7 +49,12 @@
       <p>NHS website panel cards</p>
     </a>
   </li>
-</ul>
+</ol>
+
+{{ backLink({
+  "href": "/scr-audit/index",
+  "text": "Back to previous page"
+}) }}
 {% endblock %}
 
 {% block sidebar %}
