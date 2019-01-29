@@ -5845,6 +5845,32 @@ dl {
     .audit-sidebar {
       margin-top: 56px; } }
 
+.audit-heading-list__item {
+  margin-bottom: 16px; }
+
+.audit-heading-list__link {
+  display: block;
+  color: #212b32;
+  text-decoration: none; }
+
+.audit-heading-list__link-text {
+  margin-top: 8px;
+  color: #005eb8;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429;
+  text-decoration: underline; }
+  @media (min-width: 40.0625em) {
+    .audit-heading-list__link-text {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+  @media print {
+    .audit-heading-list__link-text {
+      font-size: 14pt;
+      line-height: 1.2; } }
+
 address {
   font-style: normal; }
 

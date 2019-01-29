@@ -1,0 +1,28 @@
+// extra timelines etc.
+// prototype only
+
+.audit-heading-list {}
+
+.audit-heading-list__item {
+
+  margin-bottom: nhsuk-spacing(3);
+}
+
+.audit-heading-list__location {}
+
+.audit-heading-list__time {}
+
+.audit-heading-list__link {
+
+  display: block;
+  color: $color_nhsuk-black;
+  text-decoration: none;
+}
+
+.audit-heading-list__link-text {
+
+  margin-top: nhsuk-spacing(2);
+  color: $color_nhsuk-blue;
+  @include nhsuk-font(16);
+  text-decoration: underline;
+}
