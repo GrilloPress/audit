@@ -31,6 +31,15 @@
 {% from 'label/macro.njk' import label %}
 
 {% block body %}
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+    <h1 class="nhsuk-fieldset__heading">
+      Check the person
+    </h1>
+  </legend>
+
 <dl class="audit-dl--inline">
     <div class="audit-dl--inline__container">
       <dt class="audit-dl--inline__dt">Name</dt>
@@ -47,30 +56,31 @@
       <dd class="audit-dl--inline__dd">485 777 3456</dd>
     </div>
 </dl>
-{{ radios({
-  "idPrefix": "example",
-  "name": "example",
-  "fieldset": {
-    "legend": {
-      "classes": "nhsuk-label--xl",
-      "text": "Is this the right person?",
-      "isPageHeading": true
-    }
-  },
-  "items": [
-    {
-      "value": "yes",
-      "text": "Yes"
-    },
-    {
-      "value": "no",
-      "text": "No"
-    }
-  ]
-}) }}
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/select-report'">
+<h2>Is this the right person?</h2>
+  <div class="nhsuk-radios">
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+        Yes
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+        No
+      </label>
+    </div>
+  </div>
+  </fieldset>
+</div>
+
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/scr-audit/offline/v2/select-report'">
               Continue
             </button>
+
+
 {% endblock %}
 
 {% block sidebar %}
