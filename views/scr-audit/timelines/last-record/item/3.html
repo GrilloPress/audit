@@ -1,9 +1,17 @@
-{% set title = "Timelines" %}
-{% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/timelines" %}
+{% set title = "Where your Summary Care Record has been looked at" %}
+{% set serviceName = "Find out where your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/timelines/last-record" %}
+{% set DATESTAMP = 'Friday 19 January 2018' %}
+{% set TIME = '2:24pm' %}
+{% set LOCATION = 'Knights Pharmacy' %}
+{% set PHONE = '0113 268 1163' %}
+{% set ADDRESS = "6 Stainbeck Lane <br />
+                  Leeds <br />
+                  West Yorkshire <br />
+                  LS7 3QY"
+                  %}
 {% block scripts %}
 {% endblock %}
-
 {% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
@@ -31,36 +39,34 @@
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
 
+
 {% block body %}
-<h1>{{title}}</h1>
-<p>Exploration of the way to display the metadata available for the Summary Care Record audit service.</p>
+<div class="nhsuk-u-reading-width">
 
-<h2>Prototypes</h2>
-<ol class="audit-list--unstyled audit-list-cards">
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/heading-lists/list">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Heading lists</h2>
-      <p>List of items grouped into heading, paragraph and link</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/panel-cards/where-your-Summary-Care-Record-has-been-looked-at">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Panel cards (in service)</h2>
-      <p>NHS website search panel list</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/last-record/card">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Last record (card)</h2>
-      <p>Using NHS website panel cards</p>
-    </a>
-  </li>
-</ol>
+  {{ backLink({
+    "href": "/" + PROTOTYPEURL + "/timeline/where-your-Summary-Care-Record-has-been-looked-at",
+    "text": "Back to list"
+  }) }}
 
-{{ backLink({
-  "href": "/scr-audit/index",
-  "text": "Back to previous page"
-}) }}
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">{{DATESTAMP}}</span>
+    {{TIME}}
+  </h1>
+  <p>Your Summary Care Record was looked at by {{LOCATION}}.</p>
+  <h2 class="nhsuk-heading-m">How to find out more</h2>
+  <p>Contact {{LOCATION}}:</p>
+  <ul>
+    <li>for more information</li>
+    <li>to make a complaint</li>
+  </ul>
+  <address>
+    <p>
+      {{ADDRESS | safe }}
+    </p>
+    <p>Telephone: {{PHONE}}</p>
+  </address>
+</div>
+
 {% endblock %}
 
 {% block sidebar %}

@@ -1,9 +1,8 @@
-{% set title = "Timelines" %}
-{% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/timelines" %}
+{% set title = "Your Summary Care Record was last looked at by Leeds Teaching Hospital NHS Trust" %}
+{% set serviceName = "Find out where your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/timelines/last-record" %}
 {% block scripts %}
 {% endblock %}
-
 {% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
@@ -29,38 +28,28 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
-{% from 'back-link/macro.njk' import backLink %}
+
 
 {% block body %}
-<h1>{{title}}</h1>
-<p>Exploration of the way to display the metadata available for the Summary Care Record audit service.</p>
+<div class="nhsuk-u-reading-width">
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In the last year</span>
+     Your Summary Care Record was looked at <span class="audit-data__number"> 6 times </span>
+  </h1>
+  <p>
+    <a href="#">See a full list</a>
+  </p>
+  <h2 class="nhsuk-heading-m">Where it was used last</h2>
+  <p>
+    It was last used by Leeds Teaching Hospital NHS Trust on Friday 21 September 2018 at 3:32pm
+  </p>
+  <p>
+    <a href="#">Find out more</a>
+  </p>
 
-<h2>Prototypes</h2>
-<ol class="audit-list--unstyled audit-list-cards">
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/heading-lists/list">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Heading lists</h2>
-      <p>List of items grouped into heading, paragraph and link</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/panel-cards/where-your-Summary-Care-Record-has-been-looked-at">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Panel cards (in service)</h2>
-      <p>NHS website search panel list</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/last-record/card">
-      <h2 class="audit-list-cards__heading nhsuk-heading-m">Last record (card)</h2>
-      <p>Using NHS website panel cards</p>
-    </a>
-  </li>
-</ol>
+</div>
 
-{{ backLink({
-  "href": "/scr-audit/index",
-  "text": "Back to previous page"
-}) }}
+
 {% endblock %}
 
 {% block sidebar %}

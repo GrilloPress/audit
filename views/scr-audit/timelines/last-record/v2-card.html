@@ -1,0 +1,72 @@
+{% set title = "Your Summary Care Record was last looked at by Leeds Teaching Hospital NHS Trust" %}
+{% set serviceName = "Find out where your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/timelines/last-record" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In the last year</span>
+     Your Summary Care Record was looked at <span class="audit-data__number"> 6 times </span>
+  </h1>
+  <p>
+    <a href="#">See a full list</a>
+  </p>
+  <h2 class="nhsuk-heading-m">Where it was used last</h2>
+  <p>
+    It was last used by Leeds Teaching Hospital NHS Trust on Friday 21 September 2018 at 3:32pm
+  </p>
+  <p>
+    <a href="#">Find out more</a>
+  </p>
+  <h2 class="nhsuk-heading-m">Where it was updated from</h2>
+  <p>
+    It was created from your GP record held at <span class="audit-data__GP"> Beacon Medical Practice </span>
+  </p>
+  <h2 class="nhsuk-heading-m">Find out more</h2>
+  <ul class="audit-list--unstyled">
+    <li>
+      <a href="/{{PROTOTYPEURL}}/where-your-Summary-Care-Record-has-been-looked-at">See a list of where your Summary Card Record has been used</a>
+    </li>
+    <li>
+      <a href="#">Search for a time or place your Summary Care Record could have been used</a>
+    </li>
+    <li>
+      <a href="#">See which type of organisations have used your Summary Card Record</a>
+    </li>
+  </ul>
+
+</div>
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
