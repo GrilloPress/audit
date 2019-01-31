@@ -1,0 +1,276 @@
+{% set title = 'How to look at someone else’s health record' %}
+{% set serviceName = "Your health records" %}
+{% set PROTOTYPEURL = "hub/v1" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/hub-child.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'back-link/macro.njk' import backLink %}
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "/" + PROTOTYPEURL + "/index",
+    text: "Your health records"
+  }) }}
+{% endblock %}
+
+{% block pageheader %}
+  <h1>{{title}}</h1>
+{% endblock %}
+
+{% block body %}
+
+<div class="nhsuk-u-reading-width">
+  <article class="nhsuk-page-content">
+
+
+
+<section id="">
+
+
+
+
+
+
+<p>Health records are confidential so you can only access someone else's records if you’re authorised to do so. </p>
+
+<p>To access someone else's health records, you must: </p>
+
+<ul>
+<li>be acting on their behalf with their consent, or </li>
+<li>have legal authority to make decisions on their behalf <a href="https://www.nhs.uk/conditions/social-care-and-support-guide/making-decisions-for-someone-else/giving-someone-power-of-attorney/">(power of attorney)</a>, or </li>
+<li>have another legal basis for access</li>
+</ul>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="applying-for-access-to-someone-elses-health-records">
+
+
+
+
+
+
+<h2>Applying for access to someone else's health records</h2>
+
+<p>A request for someone's medical records should be made directly with the healthcare provider that provided the treatment, such as:</p>
+
+<ul>
+<li><a href="/Service-Search/GP/LocationSearch/4">GP surgery</a>&nbsp; </li>
+<li><a href="/Service-Search/Hospital/LocationSearch/7/Hospitals">hospital</a></li>
+<li><a href="/service-search/Opticians/LocationSearch/9">optician</a></li>
+<li><a href="/Service-Search/Dentist/LocationSearch/3">dentist</a></li>
+</ul>
+
+<p>This is known as a Subject Access Request (SAR), as set out by the Data Protection Act of 1998.</p>
+
+<p>Many healthcare providers have SAR forms that you can complete and return by email or by post. </p>
+
+<p>Here is an example of an SAR form on the <a href="https://www.nbt.nhs.uk/about-us/information-governance/access-medical-records">North Bristol NHS Trust</a> website.</p>
+
+<p>You will need the patient's written consent if you wish to inspect their record. </p>
+
+<p>Where written consent is not possible, other arrangements will be necessary.</p>
+
+<p>Under the Data Protection Act, requests for access to records should be met within 40 days. However, government guidance for healthcare organisations says they should aim to respond within 21 days.</p>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="refused-request">
+
+
+
+
+
+
+<h2>Refused request</h2>
+
+<p>A healthcare provider can refuse to supply some of your request if, for example:</p>
+
+<ul>
+<li>it is likely to cause serious physical or mental harm to the patient or another person </li>
+<li>the information you have asked for contains information that relates to another person </li>
+</ul>
+
+<p>If your request is rejected, or you have a complaint about the process, you can&nbsp;complain to the healthcare provider. </p>
+
+<p>If you are still not satisfied, you can make a complaint to the <a href="https://ico.org.uk/for-the-public/personal-information/">Information Commissioner</a>.</p>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="patients-unable-to-give-consent">
+
+
+
+
+
+
+<h2>Patients&nbsp;unable to give consent</h2>
+
+<p>If a person does not have the mental capacity to manage their own affairs and you are their attorney, you will have the right to apply for access. </p>
+
+<p>This would apply, for example, if you have a <a href="https://www.gov.uk/power-of-attorney/overview">Lasting Power of Attorney</a> with authority to manage their property and affairs. </p>
+
+<p>The same applies to a person appointed to make decisions about such matters by the Court of Protection in England and Wales.</p>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="accessing-childrens-records">
+
+
+
+
+
+
+<h2>Accessing children's records</h2>
+
+<p>A person with parental responsibility will usually be entitled to access the records of a child who is under 16. However, the best interests of the child will always be considered.</p>
+
+<p>If the healthcare provider is confident that the child can understand their rights, then it will respond to the child rather than the parent.</p>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="application-fees">
+
+
+
+
+
+
+<h2>Application fees</h2>
+
+<p>You may have to pay a fee to access&nbsp;someone else's medical records. <a href="https://www.nhs.uk/using-the-nhs/about-the-nhs/how-to-access-your-health-records/">Find out how much you'll have to pay to access&nbsp;medical records</a>.</p>
+
+
+
+
+
+
+</section>
+
+
+
+
+<section id="further-information">
+
+
+
+
+
+
+<h2>Further information</h2>
+
+<ul>
+<li><a href="/common-health-questions/nhs-services-and-treatments/can-i-access-the-medical-records-health-records-of-someone-who-has-died/">Can I access the medical records (health records) of someone who has died?</a>&nbsp; </li>
+<li><a href="/chq/Pages/1309.aspx?CategoryID=68&amp;SubCategoryID=160">How do I access my medical records (health records)?</a></li>
+<li><a href="https://www.nhs.uk/using-the-nhs/about-the-nhs/your-health-records/">More information about health records</a></li>
+</ul>
+
+
+
+
+
+
+</section>
+
+
+
+                <div class="nhsuk-c-review-date">
+                    <p class="nhsuk-body-s">
+                        Page last reviewed: 28/02/2017<br>
+                        Next review due: 28/02/2020
+                    </p>
+                </div>
+            </article>
+</div>
+
+{{ backLink({
+  "href": "/" + PROTOTYPEURL + "/index",
+  "text": "Back to previous page"
+}) }}
+
+{% endblock %}
+
+{% block sidebar %}
+<h2 class="nhsuk-heading-xs">Page contents</h2>
+           <ol class="nhsuk-list-nav">
+
+             <li><a href="#applying-for-access-to-someone-elses-health-records">Applying for access to someone else's health records</a></li>
+
+             <li><a href="#refused-request">Refused request</a></li>
+
+             <li><a href="#patients-unable-to-give-consent">Patients&nbsp;unable to give consent</a></li>
+
+             <li><a href="#accessing-childrens-records">Accessing children's records</a></li>
+
+             <li><a href="#application-fees">Application fees</a></li>
+
+             <li><a href="#further-information">Further information</a></li>
+
+           </ol>
+{% endblock %}
