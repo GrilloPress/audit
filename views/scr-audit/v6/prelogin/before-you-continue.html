@@ -1,4 +1,4 @@
-{% set title = "We need to use your details to check who's looked at your health records" %}
+{% set title = "To use this service we need to check who you are" %}
 {% set serviceName = "Find out where your Summary Care Record has been used" %}
 {% set PROTOTYPEURL = "scr-audit/v6" %}
 {% block scripts %}
@@ -38,12 +38,13 @@
         <div class="audit-promo__content">
           <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
           <p>
-            By using this service you agree to our <a href="#">privacy notice</a>, which explains that we will use the information you give us to:
+          We’ll use your NHS login to:
           </p>
           <ul>
             <li>check who you are</li>
-            <li>check who has looked at your records</li>
+            <li>check where your Summary Care Record has been used</li>
           </ul>
+          <p>Read our <a href="#">privacy notice</a> for more information.</p>
           <script type="text/javascript">
           // Takes URL checks if it is locally hosted. If it is just forwards the page to NHS-login care. If it is on heroku, goes to the URL provided
           function auth(url) {
