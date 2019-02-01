@@ -1,6 +1,6 @@
-{% set title = "Timelines" %}
+{% set title = "Choose a date" %}
 {% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/timelines" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser" %}
 {% block scripts %}
 {% endblock %}
 
@@ -33,26 +33,13 @@
 
 {% block body %}
 <h1>{{title}}</h1>
-<p>Exploration of the way to display the metadata available for the Summary Care Record audit service.</p>
+<p>Exploration of how to let users choose a timeframe to look at</p>
 
 <h2>Prototypes</h2>
 <ol class="audit-list--unstyled audit-list-cards">
   <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/heading-lists/list">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Heading lists</h3>
-      <p>List of items grouped into heading, paragraph and link</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/panel-cards/where-your-Summary-Care-Record-has-been-looked-at">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Panel cards (in service)</h3>
-      <p>NHS website search panel list</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/last-record/card">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Last record (card)</h3>
-      <p>Using NHS website panel cards</p>
+    <a href="/{{PROTOTYPEURL}}/v1/year">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">v1</h3>
     </a>
   </li>
 </ol>

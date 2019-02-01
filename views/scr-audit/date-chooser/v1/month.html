@@ -1,0 +1,134 @@
+{% set title = "Your Summary Care Record was looked at 6 times" %}
+{% set serviceName = "Check where your Summary Care Record has been looked at" %}
+{% set PROTOTYPEURL = "scr-audit/timelines/panel-cards" %}
+{% set items = [
+  {
+    time: "3:32pm",
+    location: "Leeds Teaching Hospitals NHS Trust",
+    url: "#1"
+  },
+  {
+    time: "7:28pm",
+    location: "Knights Pharmarcy",
+    url: "#2"
+  }
+]
+%}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  {{ backLink({
+    "href": "year",
+    "text": "Back to previous page"
+  }) }}
+
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In 2018</span>
+    {{title}}
+  </h1>
+
+  <div class="nhsuk-list-panel">
+    <h2 class="nhsuk-list-panel__label--m" id="sept-2018">Where your record was looked at</h2>
+    <ol class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
+      <li class="nhsuk-list-panel__item">
+        <div class="nhsuk-list-panel-heading"></div>
+        <ol class="nhsuk-list-panel-inner-list">
+          <li class="nhsuk-list-panel__item nhsuk-u-margin-bottom-2">
+            <a class="nhsuk-list-panel__link" aria-label="2:24pm, Knights Pharmacy" href="/{{PROTOTYPEURL}}/item/3">
+              <div class="">
+                3 times in a Pharmacy
+                <svg class="nhsuk-icon nhsuk-icon__chevron-right nhsuk-list-panel-inner-list__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                  <image class="nhsuk-icon__chevron-right nhsuk-icon__chevron-right--fallback" src="/assets/images/icons/icon-chevron-right-grey.png" xlink:href=""></image></svg>
+              </div>
+              <div class="nhsuk-list-panel-inner-list__link">
+                Find out more
+              </div>
+            </a>
+          </li>
+          <li class="nhsuk-list-panel__item nhsuk-u-margin-bottom-2">
+            <a class="nhsuk-list-panel__link" aria-label="2:24pm, Knights Pharmacy" href="/{{PROTOTYPEURL}}/item/3">
+              <div class="">
+                2 times in an NHS Trust or hospital
+                <svg class="nhsuk-icon nhsuk-icon__chevron-right nhsuk-list-panel-inner-list__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                  <image class="nhsuk-icon__chevron-right nhsuk-icon__chevron-right--fallback" src="/assets/images/icons/icon-chevron-right-grey.png" xlink:href=""></image></svg>
+              </div>
+              <div class="nhsuk-list-panel-inner-list__link">
+                Find out more
+              </div>
+            </a>
+          </li>
+          <li class="nhsuk-list-panel__item nhsuk-u-margin-bottom-2">
+            <a class="nhsuk-list-panel__link" aria-label="2:24pm, Knights Pharmacy" href="/{{PROTOTYPEURL}}/item/3">
+              <div class="">
+                1 time in a care home
+                <svg class="nhsuk-icon nhsuk-icon__chevron-right nhsuk-list-panel-inner-list__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                  <image class="nhsuk-icon__chevron-right nhsuk-icon__chevron-right--fallback" src="/assets/images/icons/icon-chevron-right-grey.png" xlink:href=""></image></svg>
+              </div>
+              <div class="nhsuk-list-panel-inner-list__link">
+                Find out more
+              </div>
+            </a>
+          </li>
+          <li class="nhsuk-list-panel__item nhsuk-u-margin-bottom-2">
+            <a class="nhsuk-list-panel__link" aria-label="2:24pm, Knights Pharmacy" href="/{{PROTOTYPEURL}}/item/3">
+              <div class="">
+
+                <svg class="nhsuk-icon nhsuk-icon__chevron-right nhsuk-list-panel-inner-list__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                  <image class="nhsuk-icon__chevron-right nhsuk-icon__chevron-right--fallback" src="/assets/images/icons/icon-chevron-right-grey.png" xlink:href=""></image></svg>
+              </div>
+              <div class="nhsuk-list-panel-inner-list__link">
+                See a full list of where your record was looked at in 2018
+              </div>
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <h2 class="nhsuk-heading-m">
+    Your Summary Care Record was last used by
+  </h2>
+
+  last used by
+
+  last updated by
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

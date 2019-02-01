@@ -5728,6 +5728,10 @@ b {
   color: #005eb8;
   margin-bottom: 8px; }
 
+.audit-list-cards__heading--no-link {
+  color: #212b32;
+  margin-bottom: 8px; }
+
 .nhsuk-list-panel-inner-list__container {
   border-bottom: 1px solid #d8dde0;
   margin: 0;
