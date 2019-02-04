@@ -1,6 +1,6 @@
 {% set title = "Check these details" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "examples" %}
+{% set PROTOTYPEURL = "_examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,7 +29,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -40,16 +40,26 @@
   }) }}
 
   <h1>{{ title }}</h1>
-  <dl class="audit-dl">
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Name</dt>
-      <dd class="audit-dl__dd">Frank Spencer</dd>
-    </div>
-    <div class="audit-dl__container">
-      <dt class="audit-dl__dt">Postcode</dt>
-      <dd class="audit-dl__dd">None of your business</dd>
-    </div>
-  </dl>
+  {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      }
+    }
+  ]
+}) }}
   <form action="#" method="get">
     {{ radios({
       "idPrefix": "gov",

@@ -1,6 +1,6 @@
 {% set title = "Check before you submit" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "examples" %}
+{% set PROTOTYPEURL = "_examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,7 +29,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -41,23 +41,78 @@
 
   <h1>{{ title }}</h1>
 
-  <dl class="audit-dl--inline">
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Name</dt>
-      <dd class="audit-dl--inline__dd">Frank Spencer</dd>
-      <dd class="audit-dl--inline__dd-link">
-        <a href="#">Change <span class="nhsuk-u-visually-hidden">your name</span></a>
-      </dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Date of birth</dt>
-      <dd class="audit-dl--inline__dd">1 1 2011</dd>
-      <dd class="audit-dl--inline__dd-link">
-        <a href="#">Change <span class="nhsuk-u-visually-hidden">your date of birth</span></a>
-      </dd>
-    </div>
-  </dl>
+  {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p>07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
 
   <form action="#" method="get">
 

@@ -24,12 +24,86 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
   <h1>{{title}} - {{serviceName}}</h1>
   <p>Welcome to the {{title}}.</p>
   <p>This kit is designed to quickly let you create simple pages. You can leverage nunjuck templating in your .html files</p>
+
+  {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
 </div>
 {% endblock %}
 {% block sidebar %}
