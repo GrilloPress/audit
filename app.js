@@ -14,7 +14,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
-app.use('/nhsuk-frontend', express.static(path.join(__dirname, '/node_modules/nhsuk-frontend/packages')));
+app.use('/nhsuk-frontend', express.static(path.join(__dirname, '/node_modules/nhsuk-frontend/dist')));
 
 var appViews = [
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
