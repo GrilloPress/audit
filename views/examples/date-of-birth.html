@@ -1,6 +1,6 @@
-{% set title = "This is a card" %}
+{% set title = "When did you last wash?" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,6 +29,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
+{% from 'date-input/macro.njk' import dateInput %}
 
 
 {% block body %}
@@ -39,28 +40,41 @@
     "text": "Back to list"
   }) }}
 
-  <div class="audit-promo">
-    <div class="audit-promo-wrapper">
-      <div class="audit-promo__content">
-        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-        <p>
-        The text jumps out a bit more:
-        </p>
-        <ul>
-          <li>it does</li>
-          <li>just the way it is</li>
-        </ul>
-        <form action="#" method="get">
+  <form action="#" method="get">
 
-          <input type="submit" class="nhsuk-button" value="Continue">
-          </input>
+      {{ dateInput({
+        "id": "dob",
+        "namePrefix": "dob",
+        "fieldset": {
+          "legend": {
+            "text": title,
+            "isPageHeading": true,
+            "classes": "nhsuk-label--xl"
+          }
+        },
+        "hint": {
+          "text": "For example, 31 3 1980"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
 
-        </form>
-    </div>
-  </div>
-</div>
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
 
-
+  </form>
 
 </div>
 

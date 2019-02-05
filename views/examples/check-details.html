@@ -1,6 +1,6 @@
-{% set title = "Check before you submit" %}
+{% set title = "Check these details" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -40,7 +40,6 @@
   }) }}
 
   <h1>{{ title }}</h1>
-
   {{ govukSummaryList({
   rows: [
     {
@@ -49,15 +48,6 @@
       },
       value: {
         text: "Sarah Philips"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
       }
     },
     {
@@ -66,58 +56,32 @@
       },
       value: {
         text: "5 January 1978"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact information"
-      },
-      value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact information"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact details"
-      },
-      value: {
-        html: '<p>07700 900457</p><p>sarah.phillips@example.com</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
       }
     }
   ]
 }) }}
-
   <form action="#" method="get">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "gov",
+      "fieldset": {
+        "legend": {
+          "text": "Is this really the person you are after?",
+          "classes": "nhsuk-fieldset__legend--m"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes, it is"
+        },
+        {
+          "value": "no",
+          "text": "No, it's not"
+        }
+      ]
+    }) }}
 
-    <h2>Are your details correct?</h2>
-    <p>Make sure your details are correct.</p>
     <input type="submit" class="nhsuk-button" value="Continue">
     </input>
 

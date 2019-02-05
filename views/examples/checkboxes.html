@@ -1,6 +1,6 @@
-{% set title = "Log in to see the logs" %}
+{% set title = "Is this a checkbox example?" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,6 +29,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
+{% from 'checkboxes/macro.njk' import checkboxes %}
 
 
 {% block body %}
@@ -41,39 +42,38 @@
 
   <form action="#" method="get">
 
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-        <h1 class="nhsuk-fieldset__heading">
-          {{title}}
-        </h1>
-      </legend>
-
-      {{ input({
-        "label": {
-          "text": "Username"
+    {{ checkboxes({
+      "idPrefix": "nationality",
+      "name": "nationality",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "classes": "nhsuk-fieldset__legend--xl",
+          "isPageHeading": true
+        }
+      },
+      "hint": {
+      "text": "Select all that apply"
+    },
+      "items": [
+        {
+          "value": "SCR",
+          "text": "Summary Care Record"
         },
-        "attributes": {
-          "autocomplete": "off"
+        {
+          "value": "PDS",
+          "text": "Patient Demographic Service"
         },
-        "id": "inputusername",
-        "name": "username",
-        "classes": "nhsuk-input--width-20"
-      }) }}
-
-      {{ input({
-        "type": "password",
-        "label": {
-          "text": "Password"
+        {
+          "value": "Data Release Register",
+          "text": "Data Release Register"
         },
-        "attributes": {
-          "autocomplete": "off"
-        },
-        "id": "inputpassword",
-        "name": "password",
-        "classes": "nhsuk-input--width-20"
-      }) }}
-
-    </fieldset>
+        {
+          "value": "Research and planning",
+          "text": "Research and planning"
+        }
+      ]
+    }) }}
 
     <input type="submit" class="nhsuk-button" value="Continue">
     </input>
