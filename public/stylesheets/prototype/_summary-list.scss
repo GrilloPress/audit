@@ -14,7 +14,7 @@
 
     // Force paragraphs to be 16px to ensure larger cells keep the
     // visual distinction between key and value
-    p {
+    p, address {
       @include nhsuk-font(16);
     }
   }

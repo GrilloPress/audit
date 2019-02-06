@@ -30,23 +30,28 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <h1>We've sent the report to:</h2>
-<dl class="audit-dl--inline">
- <div class="audit-dl--inline__container">
-  <dt class="audit-dl--inline__dt">Address</dt>
-   <dd class="audit-dl--inline__dd">
-                      Frank Spencer <br>
-                      Grand Parade <br>
-                      Great George Street <br>
-                      Skegness <br>
-                      Lincolnshire <br>
-                      PE25 2UE
 
-      </dd>
-    </div>
-</dl>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "Frank Spencer <br>
+        Grand Parade <br>
+        Great George Street <br>
+        Skegness <br>
+        Lincolnshire <br>
+        PE25 2UE"
+      }
+    }
+  ]
+}) }}
 <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-case-ID'">
               Send another report
             </button>

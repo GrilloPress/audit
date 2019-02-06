@@ -6035,18 +6035,18 @@ dl {
       display: table;
       width: 100%; } }
 
-.govuk-summary-list p {
+.govuk-summary-list p, .govuk-summary-list address {
   font-weight: 400;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429; }
   @media (min-width: 40.0625em) {
-    .govuk-summary-list p {
+    .govuk-summary-list p, .govuk-summary-list address {
       font-size: 16px;
       font-size: 1rem;
       line-height: 1.5; } }
   @media print {
-    .govuk-summary-list p {
+    .govuk-summary-list p, .govuk-summary-list address {
       font-size: 14pt;
       line-height: 1.2; } }
 

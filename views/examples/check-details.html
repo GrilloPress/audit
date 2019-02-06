@@ -41,25 +41,25 @@
 
   <h1>{{ title }}</h1>
   {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Name"
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: "Sarah Philips"
+        }
       },
-      value: {
-        text: "Sarah Philips"
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          text: "5 January 1978"
+        }
       }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        text: "5 January 1978"
-      }
-    }
-  ]
-}) }}
+    ]
+  }) }}
   <form action="#" method="get">
     {{ radios({
       "idPrefix": "gov",

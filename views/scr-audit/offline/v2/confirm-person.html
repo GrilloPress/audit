@@ -29,6 +29,7 @@
 {% from 'button/macro.njk' import button %}
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 
@@ -40,22 +41,35 @@
     </h1>
   </legend>
 
-<dl class="audit-dl--inline">
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Name</dt>
-      <dd class="audit-dl--inline__dd">Frank Spencer</dd>
-    </div>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: "Frank Spencer"
+        }
+      },
+      {
+        key: {
+          text: "Place of birth"
+        },
+        value: {
+          text: "Skegness"
+        }
+      },
+      {
+        key: {
+          text: "NHS number"
+        },
+        value: {
+          text: "485 777 3456"
+        }
+      }
+    ]
+  }) }}
 
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Place of birth</dt>
-      <dd class="audit-dl--inline__dd">Skegness</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">NHS number</dt>
-      <dd class="audit-dl--inline__dd">485 777 3456</dd>
-    </div>
-</dl>
 <h2>Is this the right person?</h2>
   <div class="nhsuk-radios">
 
