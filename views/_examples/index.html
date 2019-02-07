@@ -1,0 +1,118 @@
+{% set title = "Examples" %}
+{% set serviceName = "Service name" %}
+{% set PROTOTYPEURL = "_examples" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block body %}
+<h1>{{title}}</h1>
+<p>A few pre-built pages to take and stich together.</p>
+
+<h2>Pages</h2>
+<ol class="audit-list--unstyled audit-list-cards">
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/card">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">In-service explainer card</h3>
+      <p>Tell users something that will ensure their journey is successful</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/check-details">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Check data is right</h3>
+      <p>Let users answer whether a bit of data is correct</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/check-before-you-continue">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Check your answers before submission</h3>
+      <p>Let users check the data they have entered is correct</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/checkboxes">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Checkboxes</h3>
+      <p>Let users choose more than one item</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/date-of-birth">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Ask for Day, Month, Year (Date of birth)</h3>
+      <p>Get an exact date from the user, like a date of birth</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/input">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Input</h3>
+      <p>Get data from the user</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/interruption-card">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Interruption card</h3>
+      <p>Slow the user down so they take notice of vital information</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/login">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Login (basic password input)</h3>
+      <p>Let the user sign in</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/radio">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Radio</h3>
+      <p>Give users a clear choice</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/nhs-number">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">NHS Number</h3>
+      <p>Ask the user for an NHS number</p>
+    </a>
+  </li>
+</ol>
+
+{{ backLink({
+  "href": "../index",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

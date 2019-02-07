@@ -1,9 +1,8 @@
-{% set title = "Timelines" %}
-{% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/timelines" %}
+{% set title = "How does this input make you feel?" %}
+{% set serviceName = "Service name" %}
+{% set PROTOTYPEURL = "_examples" %}
 {% block scripts %}
 {% endblock %}
-
 {% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
@@ -31,36 +30,38 @@
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
 
+
 {% block body %}
-<h1>{{title}}</h1>
-<p>Exploration of the way to display the metadata available for the Summary Care Record audit service.</p>
+<div class="nhsuk-u-reading-width">
 
-<h2>Prototypes</h2>
-<ol class="audit-list--unstyled audit-list-cards">
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/heading-lists/list">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Heading lists</h3>
-      <p>List of items grouped into heading, paragraph and link</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/panel-cards/where-your-Summary-Care-Record-has-been-looked-at">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Panel cards (in service)</h3>
-      <p>NHS website search panel list</p>
-    </a>
-  </li>
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/last-record/card">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Last record (card)</h3>
-      <p>Using NHS website panel cards</p>
-    </a>
-  </li>
-</ol>
+  {{ backLink({
+    "href": "index",
+    "text": "Back to list"
+  }) }}
 
-{{ backLink({
-  "href": "/scr-audit/index",
-  "text": "Back to previous page"
-}) }}
+  <form action="#" method="get">
+
+    {{ input({
+      "label": {
+        "text": title,
+        "isPageHeading": true,
+        "classes": "nhsuk-label--xl"
+      },
+      "hint": {
+        "text": "Be honest"
+      },
+      "id": "inputnhsnumber",
+      "name": "nhsnumber",
+      "classes": "nhsuk-input--width-20"
+    }) }}
+
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
+
+  </form>
+
+</div>
+
 {% endblock %}
 
 {% block sidebar %}

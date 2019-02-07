@@ -68,6 +68,17 @@ dl {
 
 }
 
+.audit-dl--inline__dd-link {
+
+
+  display: inline-block;
+  padding: nhsuk-spacing(2) nhsuk-spacing(2) nhsuk-spacing(1) 0;
+  margin: 0;
+  @include mq($from: tablet) {
+    float: right;
+  }
+}
+
 .audit-dl__details {
 
   @include nhsuk-typography-responsive(16);

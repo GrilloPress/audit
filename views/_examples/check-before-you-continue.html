@@ -1,8 +1,9 @@
-{% set title = 'Prototype kit' %}
-{% set serviceName = "NHS website" %}
+{% set title = "Check before you submit" %}
+{% set serviceName = "Service name" %}
+{% set PROTOTYPEURL = "_examples" %}
 {% block scripts %}
 {% endblock %}
-{% extends 'layouts/nhsuk.html' %}
+{% extends 'layouts/layout.html' %}
 {% from 'action-link/macro.njk' import actionLink %}
 {% from 'nav-a-z/macro.njk' import azNav %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -24,13 +25,21 @@
 {% from 'tables/macro.njk' import table %}
 {% from 'warning-callout/macro.njk' import warningCallout %}
 {% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
 {% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
-  <h1>{{title}} - {{serviceName}}</h1>
-  <p>Welcome to the {{title}}.</p>
-  <p>This kit is designed to quickly let you create simple pages. You can leverage nunjuck templating in your .html files</p>
+
+  {{ backLink({
+    "href": "index",
+    "text": "Back to list"
+  }) }}
+
+  <h1>{{ title }}</h1>
 
   {{ govukSummaryList({
   rows: [
@@ -90,7 +99,7 @@
         text: "Contact details"
       },
       value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+        html: '<p>07700 900457</p><p>sarah.phillips@example.com</p>'
       },
       actions: {
         items: [
@@ -104,7 +113,19 @@
     }
   ]
 }) }}
+
+  <form action="#" method="get">
+
+    <h2>Are your details correct?</h2>
+    <p>Make sure your details are correct.</p>
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
+
+  </form>
+
 </div>
+
 {% endblock %}
+
 {% block sidebar %}
 {% endblock %}
