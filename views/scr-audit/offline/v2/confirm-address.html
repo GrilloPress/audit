@@ -30,6 +30,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-form-group">
@@ -39,19 +40,23 @@
       Check the address
     </h1>
   </legend>
-<dl class="audit-dl--inline">
- <div class="audit-dl--inline__container">
-  <dt class="audit-dl--inline__dt">Address</dt>
-   <dd class="audit-dl--inline__dd">
-                      Frank Spencer <br>
-                      Grand Parade <br>
-                      Great George Street <br>
-                      Skegness <br>
-                      Lincolnshire <br>
-                      PE25 2UE
-      </dd>
-    </div>
-</dl>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Address"
+        },
+        value: {
+          html: "Frank Spencer <br>
+          Grand Parade <br>
+          Great George Street <br>
+          Skegness <br>
+          Lincolnshire <br>
+          PE25 2UE"
+        }
+      }
+    ]
+  }) }}
 <h2>Is this the address we should send the report to?</h2>
   <div class="nhsuk-radios">
 

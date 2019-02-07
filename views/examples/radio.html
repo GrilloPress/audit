@@ -1,6 +1,6 @@
-{% set title = "Is this a checkbox example?" %}
+{% set title = "Is this a radio button?" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,7 +29,6 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-{% from 'checkboxes/macro.njk' import checkboxes %}
 
 
 {% block body %}
@@ -42,35 +41,24 @@
 
   <form action="#" method="get">
 
-    {{ checkboxes({
-      "idPrefix": "nationality",
-      "name": "nationality",
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "gov",
       "fieldset": {
         "legend": {
           "text": title,
-          "classes": "nhsuk-fieldset__legend--xl",
-          "isPageHeading": true
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
         }
       },
-      "hint": {
-      "text": "Select all that apply"
-    },
       "items": [
         {
-          "value": "SCR",
-          "text": "Summary Care Record"
+          "value": "yes",
+          "text": "Yes, it is"
         },
         {
-          "value": "PDS",
-          "text": "Patient Demographic Service"
-        },
-        {
-          "value": "Data Release Register",
-          "text": "Data Release Register"
-        },
-        {
-          "value": "Research and planning",
-          "text": "Research and planning"
+          "value": "no",
+          "text": "No, it's not"
         }
       ]
     }) }}

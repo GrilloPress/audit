@@ -1,6 +1,6 @@
-{% set title = "Is this a radio button?" %}
+{% set title = "Check these details" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,7 +29,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -39,16 +39,35 @@
     "text": "Back to list"
   }) }}
 
+  <h1>{{ title }}</h1>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: "Sarah Philips"
+        }
+      },
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          text: "5 January 1978"
+        }
+      }
+    ]
+  }) }}
   <form action="#" method="get">
-
     {{ radios({
       "idPrefix": "gov",
       "name": "gov",
       "fieldset": {
         "legend": {
-          "text": title,
-          "isPageHeading": true,
-          "classes": "nhsuk-fieldset__legend--xl"
+          "text": "Is this really the person you are after?",
+          "classes": "nhsuk-fieldset__legend--m"
         }
       },
       "items": [

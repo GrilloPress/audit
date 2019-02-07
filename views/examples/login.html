@@ -1,6 +1,6 @@
-{% set title = "This is an interruption card" %}
+{% set title = "Log in to see the logs" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -39,28 +39,46 @@
     "text": "Back to list"
   }) }}
 
-  <div class="audit-interruption">
-    <div class="audit-interruption-wrapper">
-      <div class="audit-interruption__content">
-        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-        <p>
-        This is a speedbump that really stops people:
-        </p>
-        <ul>
-          <li>it does</li>
-          <li>just the way it is</li>
-        </ul>
-        <form action="#" method="get">
+  <form action="#" method="get">
 
-          <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
-          </input>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+        <h1 class="nhsuk-fieldset__heading">
+          {{title}}
+        </h1>
+      </legend>
 
-        </form>
-    </div>
-  </div>
-</div>
+      {{ input({
+        "label": {
+          "text": "Username"
+        },
+        "attributes": {
+          "autocomplete": "off"
+        },
+        "id": "inputusername",
+        "name": "username",
+        "classes": "nhsuk-input--width-20"
+      }) }}
 
+      {{ input({
+        "type": "password",
+        "label": {
+          "text": "Password"
+        },
+        "attributes": {
+          "autocomplete": "off"
+        },
+        "id": "inputpassword",
+        "name": "password",
+        "classes": "nhsuk-input--width-20"
+      }) }}
 
+    </fieldset>
+
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
+
+  </form>
 
 </div>
 

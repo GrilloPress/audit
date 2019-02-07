@@ -1,6 +1,6 @@
-{% set title = "Check before you submit" %}
+{% set title = "When did you last wash?" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -29,7 +29,8 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
-{% from "_macros/_summary-list.html" import govukSummaryList %}
+{% from 'date-input/macro.njk' import dateInput %}
+
 
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -39,85 +40,37 @@
     "text": "Back to list"
   }) }}
 
-  <h1>{{ title }}</h1>
-
-  {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        text: "Sarah Philips"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        text: "5 January 1978"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact information"
-      },
-      value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact information"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact details"
-      },
-      value: {
-        html: '<p>07700 900457</p><p>sarah.phillips@example.com</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
-
   <form action="#" method="get">
 
-    <h2>Are your details correct?</h2>
-    <p>Make sure your details are correct.</p>
+      {{ dateInput({
+        "id": "dob",
+        "namePrefix": "dob",
+        "fieldset": {
+          "legend": {
+            "text": title,
+            "isPageHeading": true,
+            "classes": "nhsuk-label--xl"
+          }
+        },
+        "hint": {
+          "text": "For example, 31 3 1980"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
+
     <input type="submit" class="nhsuk-button" value="Continue">
     </input>
 

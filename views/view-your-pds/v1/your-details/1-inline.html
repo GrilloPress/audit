@@ -11,11 +11,11 @@
     telephone: "01132111165",
     mobile: "07116211211",
     NHSNumber: "485 777 3456",
-    address: "Grand Parade <br />
+    address: "<address>Grand Parade <br />
                       Great George Street <br />
                       Skegness <br />
                       Lincolnshire <br />
-                      PE25 2UE"
+                      PE25 2UE</address>"
   }
 ]
 %}
@@ -50,6 +50,7 @@
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
 {% from 'details/macro.njk' import details %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 ```
 {% block body %}
 <div class="nhsuk-u-reading-width">
@@ -63,51 +64,74 @@
     {{title}}
   </h1>
 
-  <dl class="audit-dl--inline">
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Name</dt>
-      <dd class="audit-dl--inline__dd">{{ d.name }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Date of birth</dt>
-      <dd class="audit-dl--inline__dd">{{ d.dob }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Place of birth</dt>
-      <dd class="audit-dl--inline__dd">{{ d.placeOfBirth }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">NHS number</dt>
-      <dd class="audit-dl--inline__dd">{{ d.NHSNumber }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Email</dt>
-      <dd class="audit-dl--inline__dd">{{ d.email }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Telephone</dt>
-      <dd class="audit-dl--inline__dd">{{ d.telephone }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Mobile</dt>
-      <dd class="audit-dl--inline__dd">{{ d.mobile }}</dd>
-    </div>
-
-    <div class="audit-dl--inline__container">
-      <dt class="audit-dl--inline__dt">Address</dt>
-      <dd class="audit-dl--inline__dd">
-        {{ d.address | safe }}
-        <span class="audit-dl-link"><a href="/{{PROTOTYPEURL}}/your-details/previous-addresses">Previous addresses</a></span>
-      </dd>
-    </div>
-
-</dl>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: d.name
+        }
+      },
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          text: d.dob
+        }
+      },
+      {
+        key: {
+          text: "Place of birth"
+        },
+        value: {
+          text: d.placeOfBirth
+        }
+      },
+      {
+        key: {
+          text: "NHS number"
+        },
+        value: {
+          text: d.NHSNumber
+        }
+      },
+      {
+        key: {
+          text: "Email"
+        },
+        value: {
+          text: d.email
+        }
+      },
+      {
+        key: {
+          text: "Telephone"
+        },
+        value: {
+          text: d.telephone
+        }
+      },
+      {
+        key: {
+          text: "Mobile"
+        },
+        value: {
+          text: d.mobile
+        }
+      },
+      {
+        key: {
+          text: "Address"
+        },
+        value: {
+          html: d.address + "<p><a href=" + '"/' + PROTOTYPEURL + '/your-details/previous-addresses"' + ">Previous addresses</a></p>"
+        }
+      }
+    ]
+  }) }}
   {% endfor %}
 
 

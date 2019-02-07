@@ -54,6 +54,7 @@
 {% from 'input/macro.njk' import input %}
 {% from 'label/macro.njk' import label %}
 {% from 'back-link/macro.njk' import backLink %}
+{% from "_macros/_summary-list.html" import govukSummaryList %}
 {% block body %}
 <div class="nhsuk-u-reading-width">
   {{ backLink({
@@ -66,14 +67,20 @@
   </h1>
 
   {% for p in previous %}
-    <div>
-      <dl class="audit-dl">
-        <div class="audit-dl__container">
-          <dt class="audit-dl__dt">Your address from {{ p.date }}</dt>
-          <dd class="audit-dl__dd">{{ p.address | safe }}</dd>
-        </div>
-      </dl>
-    </div>
+  <h2 class="nhsuk-heading-s">{{p.date}}</h2>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Your address"
+        },
+        value: {
+          html: p.address
+        }
+      }
+    ]
+  }) }}
+
   {% endfor %}
 
 </div>

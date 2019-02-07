@@ -1,6 +1,6 @@
-{% set title = "This is a card" %}
+{% set title = "Enter your NHS number" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -39,28 +39,27 @@
     "text": "Back to list"
   }) }}
 
-  <div class="audit-promo">
-    <div class="audit-promo-wrapper">
-      <div class="audit-promo__content">
-        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
-        <p>
-        The text jumps out a bit more:
-        </p>
-        <ul>
-          <li>it does</li>
-          <li>just the way it is</li>
-        </ul>
-        <form action="#" method="get">
+  <form action="#" method="get">
 
-          <input type="submit" class="nhsuk-button" value="Continue">
-          </input>
+    {{ input({
+      "label": {
+        "text": title,
+        "isPageHeading": true,
+        "classes": "nhsuk-label--xl"
+      },
+      "hint": {
+        "html": "<p>You can find this on any letter sent to you by the NHS, on a prescription or by logging in to a GP practice online service</p> <p> It is a 10 digit number, like 485 777 3456 </p> "
+      },
+      "type": "number",
+      "id": "inputnhsnumber",
+      "name": "nhsnumber",
+      "classes": "nhsuk-input--width-10"
+    }) }}
 
-        </form>
-    </div>
-  </div>
-</div>
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
 
-
+  </form>
 
 </div>
 

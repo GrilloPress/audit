@@ -1,6 +1,6 @@
-{% set title = "Enter your NHS number" %}
+{% set title = "This is an interruption card" %}
 {% set serviceName = "Service name" %}
-{% set PROTOTYPEURL = "_examples" %}
+{% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
 {% endblock %}
 {% extends 'layouts/layout.html' %}
@@ -39,26 +39,28 @@
     "text": "Back to list"
   }) }}
 
-  <form action="#" method="get">
+  <div class="audit-interruption">
+    <div class="audit-interruption-wrapper">
+      <div class="audit-interruption__content">
+        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+        <p>
+        This is a speedbump that really stops people:
+        </p>
+        <ul>
+          <li>it does</li>
+          <li>just the way it is</li>
+        </ul>
+        <form action="#" method="get">
 
-    {{ input({
-      "label": {
-        "text": title,
-        "isPageHeading": true,
-        "classes": "nhsuk-label--xl"
-      },
-      "hint": {
-        "html": "You can find this on any letter sent to you by the NHS, on a prescription or by logging in to a GP practice online service </span> <span class='nhsuk-hint'> This is a 10 digit number, like 485 777 3456 <br> "
-      },
-      "id": "inputnhsnumber",
-      "name": "nhsnumber",
-      "classes": "nhsuk-input--width-10"
-    }) }}
+          <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
+          </input>
 
-    <input type="submit" class="nhsuk-button" value="Continue">
-    </input>
+        </form>
+    </div>
+  </div>
+</div>
 
-  </form>
+
 
 </div>
 
