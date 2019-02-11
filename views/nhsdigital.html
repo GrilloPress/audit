@@ -29,6 +29,16 @@
 {% endblock %}
 
 {% block body %}
+
+<nav class="nhsuk-breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/docs">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/docs/install">Install</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/docs/install">Back to Install</a></p>
+  </div>
+</nav>
 <div class="nhsuk-u-reading-width">
   <h1>{{title}} - {{serviceName}}</h1>
   <p>Welcome to the {{title}}.</p>
