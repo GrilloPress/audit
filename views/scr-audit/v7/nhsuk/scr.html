@@ -1,0 +1,89 @@
+{% set title = "Your Summary Care Record" %}
+{% set serviceName = "Check where your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/v7" %}
+{% set template = "single" %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/nhsuk.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'contents-list/macro.njk' import contentsList %}
+
+{% block breadcrumb %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ],
+    href: "#",
+    text: "Find out who's looked at your health records"
+  }) }}
+{% endblock %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+  <h1>{{title}}</h1>
+
+  {{ contentsList({
+    items: [
+      {
+        href: "/" + PROTOTYPEURL + "/nhsuk/scr",
+        text: title,
+        current: "true"
+      },
+      {
+        href: "/" + PROTOTYPEURL + "/nhsuk/start",
+        text: serviceName
+      },
+      {
+        href: "/" + PROTOTYPEURL + "/nhsuk/opt-out",
+        text: "Choose not to have a Summary Care Record"
+      }
+    ]
+  }) }}
+  <p>
+    Use this service to check where your Summary Care Record has been used.
+  </p>
+  <p>
+    Your Summary Care Record comes from your GP record. It tells health and care staff:
+  </p>
+  <ul>
+    <li>your allergies</li>
+    <li>your medicines</li>
+    <li>any reactions you've had to medicines</li>
+  </ul>
+  <p>It helps health and care staff give you the right care when you are away from your GP surgery. For example, in an emergency.</p>
+    <h2>To use this service you'll need:</h2>
+    <ul>
+      <li>to be 16 or older</li>
+      <li>an NHS login - if you do not have one, we'll help you set one up</li>
+    </ul>
+  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
+    Start now
+  </button>
+</div>
+{% endblock %}
+{% block sidebar %}
+{% endblock %}
