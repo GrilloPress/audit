@@ -6,13 +6,18 @@ $color_audit-interruption-blue: #05538e;
   color: $color_nhsuk-white;
 }
 
-.audit-interruption-wrapper {
+.audit-interruption__wrapper {
   background-color: $color_audit-interruption-blue;
   box-shadow: 0 $nhsuk-box-shadow-link 0 0 darken($color_audit-interruption-blue, 8%); /* [2] */
   display: block;
   height: 100%; /* [3] */
   position: relative; /* [4] */
   text-decoration: none; /* [5] */
+
+  .nhsuk-button {
+
+    margin-bottom: 0;
+  }
 
 }
 

@@ -1,4 +1,4 @@
-{% set title = "Enter your NHS number" %}
+{% set title = "Do you know your NHS number?" %}
 {% set serviceName = "Service name" %}
 {% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
@@ -39,21 +39,32 @@
     "text": "Back to list"
   }) }}
 
+  <h1>We need your NHS number to check who you are</h1>
+  <p>Your NHS number is a 10 digit number, for example 485 777 3456 </p>
+  <p>You can find your NHS number on any letter sent to you by the NHS, on your prescriptions or by logging in to your GP practice online service</p>
+
   <form action="#" method="get">
 
-    {{ input({
-      "label": {
-        "text": title,
-        "isPageHeading": true,
-        "classes": "nhsuk-label--xl"
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "gov",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": false,
+          "classes": "nhsuk-fieldset__legend--m"
+        }
       },
-      "hint": {
-        "html": "<p> Your NHS number is a 10 digit number, for example 485 777 3456 </p>"
-      },
-      "type": "number",
-      "id": "inputnhsnumber",
-      "name": "nhsnumber",
-      "classes": "nhsuk-input--width-10"
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes, I know my NHS number"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
     }) }}
 
     <input type="submit" class="nhsuk-button" value="Continue">

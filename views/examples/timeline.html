@@ -1,4 +1,4 @@
-{% set title = "Enter your NHS number" %}
+{% set title = "This is a timeline" %}
 {% set serviceName = "Service name" %}
 {% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
@@ -39,29 +39,41 @@
     "text": "Back to list"
   }) }}
 
-  <form action="#" method="get">
+        <h1 class="nhsuk-heading-l">Claim history</h1>
+        <div class="">
+          <p class="nhsuk-body-s">
+            From: <time>12 February 2016</time><br>
+            To: <time>1 February 2019</time>
+          </p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__entry">
+            <h3 class="timeline__title">Claim disallowed</h3>
+            <p class="timeline__info">
+              <span class="nhsuk-u-visually-hidden">Claim disallowed</span>
+              <span class="timeline__author">by John Smith</span>
+              <span class="timeline__date">1 January 2018 at 13:02</span>
+            </p>
+            <p class="timeline__body">
+              Claimant over state pension age.
+            </p>
+          </li>
 
-    {{ input({
-      "label": {
-        "text": title,
-        "isPageHeading": true,
-        "classes": "nhsuk-label--xl"
-      },
-      "hint": {
-        "html": "<p> Your NHS number is a 10 digit number, for example 485 777 3456 </p>"
-      },
-      "type": "number",
-      "id": "inputnhsnumber",
-      "name": "nhsnumber",
-      "classes": "nhsuk-input--width-10"
-    }) }}
+          <li class="timeline__entry">
+            <h3 class="timeline__title">Marriage verified</h3>
+            <p class="timeline__info">
+              <span class="nhsuk-u-visually-hidden">Marriage verified</span>
+              <span class="timeline__author">by John Smith</span>
+              <span class="timeline__date">1 January 2018 at 13:21</span>
+            </p>
+            <p class="timeline__body">
+              Marriage certificate uploaded to DRS.
+            </p>
+          </li>
+        </ol>
 
-    <input type="submit" class="nhsuk-button" value="Continue">
-    </input>
+      </div>
 
-  </form>
-
-</div>
 
 {% endblock %}
 

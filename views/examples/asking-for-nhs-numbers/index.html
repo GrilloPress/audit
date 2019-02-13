@@ -1,0 +1,82 @@
+{% set title = "Asking for NHS numbers" %}
+{% set serviceName = "Service name" %}
+{% set PROTOTYPEURL = "examples" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+{% from 'action-link/macro.njk' import actionLink %}
+{% from 'nav-a-z/macro.njk' import azNav %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'care-card/macro.njk' import careCard %}
+{% from 'contents-list/macro.njk' import contentsList %}
+{% from 'details/macro.njk' import details %}
+{% from 'header/macro.njk' import header %}
+{% from 'hero/macro.njk' import hero %}
+{% from 'footer/macro.njk' import footer %}
+{% from 'do-dont-list/macro.njk' import list %}
+{% from 'images/macro.njk' import image %}
+{% from 'inset-text/macro.njk' import insetText %}
+{% from 'list-panel/macro.njk' import listPanel %}
+{% from 'pagination/macro.njk' import pagination %}
+{% from 'panel/macro.njk' import panel %}
+{% from 'promo/macro.njk' import promo %}
+{% from 'review-date/macro.njk' import reviewDate %}
+{% from 'skip-link/macro.njk' import skipLink %}
+{% from 'tables/macro.njk' import table %}
+{% from 'warning-callout/macro.njk' import warningCallout %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'button/macro.njk' import button %}
+{% from 'input/macro.njk' import input %}
+{% from 'label/macro.njk' import label %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block body %}
+<h1>{{title}}</h1>
+<p>The NHS number is a 10 digit number, like 485 777 3456.</p>
+<p>It must always be displayed with a space after the first three digits. With another space after the next three.</p>
+<h2>Issues with the NHS number</h2>
+<p>The NHS number is not a well-known identifier. Even within the NHS.</p>
+<p>Users scanning the page will often mistake it for their National insurance number.</p>
+<p>Avoid asking for it, or provide another way to complete the task without it.</p>
+
+<h2 id="Strategies">Strategies</h2>
+<ol class="audit-list--unstyled audit-list-cards">
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/asking-for-nhs-numbers/a">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Be clear that it is needed</h3>
+      <p>Tell users upfront and often that the NHS number is needed by using something like an interruption card</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/asking-for-nhs-numbers/b">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Provide another way to succeed</h3>
+      <p>Give users a choice to use something other than their NHS number, like their postcode</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/asking-for-nhs-numbers/c">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Provide clear guidance when you ask for it</h3>
+      <p>Tell users the format of the NHS number and provide an example.</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/asking-for-nhs-numbers/d">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Tell users where to find it</h3>
+      <p>If you haven't introduced the NHS previously, tell users where to find it before asking for it.</p>
+    </a>
+  </li>
+
+</ol>
+
+{{ backLink({
+  "href": "../index",
+  "text": "Back to previous page"
+}) }}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

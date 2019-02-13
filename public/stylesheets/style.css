@@ -5881,7 +5881,7 @@ b {
   width: 100%;
   color: #ffffff; }
 
-.audit-interruption-wrapper {
+.audit-interruption__wrapper {
   background-color: #05538e;
   box-shadow: 0 4px 0 0 #043c67;
   /* [2] */
@@ -5892,6 +5892,8 @@ b {
   /* [4] */
   text-decoration: none;
   /* [5] */ }
+  .audit-interruption__wrapper .nhsuk-button {
+    margin-bottom: 0; }
 
 .audit-interruption__img {
   border-bottom: 1px solid #f0f4f5;
@@ -6139,6 +6141,35 @@ dl {
 .govuk-summary-list--no-border .govuk-summary-list__actions,
 .govuk-summary-list--no-border .govuk-summary-list__row {
   border: 0; }
+
+.timeline {
+  border-left: 3px solid #425563;
+  list-style-type: none;
+  padding: 0; }
+
+.timeline__entry {
+  margin: 2em 0;
+  padding-left: 1em;
+  position: relative; }
+  .timeline__entry::before {
+    background-color: #425563;
+    content: ' ';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 12px;
+    width: 10px; }
+  .timeline__entry .timeline__title {
+    display: block;
+    font-weight: 700; }
+  .timeline__entry .timeline__author,
+  .timeline__entry .timeline__date {
+    color: #425563;
+    display: block; }
+  .timeline__entry .timeline__info {
+    margin-top: 0; }
+  .timeline__entry .timeline__body {
+    display: block; }
 
 address {
   font-style: normal; }

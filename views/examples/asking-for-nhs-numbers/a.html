@@ -1,4 +1,4 @@
-{% set title = "Enter your NHS number" %}
+{% set title = "We need to check who you are before you can make your choice" %}
 {% set serviceName = "Service name" %}
 {% set PROTOTYPEURL = "examples" %}
 {% block scripts %}
@@ -32,35 +32,35 @@
 
 
 {% block body %}
-<div class="nhsuk-u-reading-width">
 
   {{ backLink({
     "href": "index",
     "text": "Back to list"
   }) }}
 
-  <form action="#" method="get">
+  <div class="audit-interruption">
+    <div class="audit-interruption__wrapper">
+      <div class="audit-interruption__content">
+        <h1 class="audit-promo__heading nhsuk-heading-l">{{title}}</h1>
+        <p>
+          We'll need your:
+        </p>
+        <ul>
+          <li>name</li>
+          <li>date of birth</li>
+          <li>postcode or NHS number</li>
+        </ul>
+        <p>
+          We'll use these details to find your contact details from your health records so we can send you a security code.
+        </p>
+        <form action="index#Strategies" method="get">
 
-    {{ input({
-      "label": {
-        "text": title,
-        "isPageHeading": true,
-        "classes": "nhsuk-label--xl"
-      },
-      "hint": {
-        "html": "<p> Your NHS number is a 10 digit number, for example 485 777 3456 </p>"
-      },
-      "type": "number",
-      "id": "inputnhsnumber",
-      "name": "nhsnumber",
-      "classes": "nhsuk-input--width-10"
-    }) }}
+          <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
+          </input>
 
-    <input type="submit" class="nhsuk-button" value="Continue">
-    </input>
-
-  </form>
-
+        </form>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

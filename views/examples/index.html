@@ -33,17 +33,10 @@
 
 {% block body %}
 <h1>{{title}}</h1>
-<p>A few pre-built pages to take and stich together.</p>
+<p>A few pre-built pages to take and stitch together.</p>
 
-<h2>Pages</h2>
+<h2>Patterns</h2>
 <ol class="audit-list--unstyled audit-list-cards">
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/card">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">In-service explainer card</h3>
-      <p>Tell users something that will ensure their journey is successful</p>
-    </a>
-  </li>
-
   <li class="audit-list-cards__item">
     <a href="/{{PROTOTYPEURL}}/check-details">
       <h3 class="audit-list-cards__heading nhsuk-heading-m">Check data is right</h3>
@@ -57,6 +50,44 @@
       <p>Let users check the data they have entered is correct</p>
     </a>
   </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/asking-for-nhs-numbers/index">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Asking for NHS numbers</h3>
+      <p>Help users use your service if it needs their NHS number</p>
+    </a>
+  </li>
+</ol>
+
+<h2>Pages</h2>
+<ol class="audit-list--unstyled audit-list-cards">
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/interruption-card">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Interruption card</h3>
+      <p>Slow the user down so they take notice of vital information</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/card">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">In-service explainer card</h3>
+      <p>Tell users something that will ensure their journey is successful</p>
+    </a>
+  </li>
+
+  <li class="audit-list-cards__item">
+    <a href="/{{PROTOTYPEURL}}/timeline">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">Timeline</h3>
+      <p>Simple timeline (from DWP)</p>
+    </a>
+  </li>
+</ol>
+
+<h2>Form fields</h2>
+<ol class="audit-list--unstyled audit-list-cards">
+
+
+
 
   <li class="audit-list-cards__item">
     <a href="/{{PROTOTYPEURL}}/checkboxes">
@@ -79,12 +110,7 @@
     </a>
   </li>
 
-  <li class="audit-list-cards__item">
-    <a href="/{{PROTOTYPEURL}}/interruption-card">
-      <h3 class="audit-list-cards__heading nhsuk-heading-m">Interruption card</h3>
-      <p>Slow the user down so they take notice of vital information</p>
-    </a>
-  </li>
+
 
   <li class="audit-list-cards__item">
     <a href="/{{PROTOTYPEURL}}/login">
@@ -113,6 +139,8 @@
       <p>Ask for several inputs</p>
     </a>
   </li>
+
+
 </ol>
 
 {{ backLink({
