@@ -5,6 +5,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( 'index' );
 });
 
@@ -34,12 +36,16 @@ router.get('/ndop-login', function(req, res, next) {
 
 router.get('/:view', function(req, res, next) {
   var theView = req.params.view;
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( theView );
 });
 
 router.get('/:subdir/:view', function(req, res, next) {
   var theView = req.params.view;
   var theDir = req.params.subdir;
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( theDir + '/' + theView );
 });
 
@@ -47,6 +53,8 @@ router.get('/:subdir/:subdir2/:view', function(req, res, next) {
   var theView = req.params.view;
   var theDir = req.params.subdir;
   var theDir2 = req.params.subdir2;
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( theDir + '/' + theDir2 + '/' + theView );
 });
 
@@ -55,6 +63,8 @@ router.get('/:subdir/:subdir2/:subdir3/:view', function(req, res, next) {
   var theDir = req.params.subdir;
   var theDir2 = req.params.subdir2;
   var theDir3 = req.params.subdir3;
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( theDir + '/' + theDir2 + '/' + theDir3 + '/' + theView );
 });
 
@@ -64,6 +74,8 @@ router.get('/:subdir/:subdir2/:subdir3/:subdir4/:view', function(req, res, next)
   var theDir2 = req.params.subdir2;
   var theDir3 = req.params.subdir3;
   var theDir4 = req.params.subdir4;
+  res.locals.data = req.session;
+  console.log( req.session );
   res.render( theDir + '/' + theDir2 + '/' + theDir3 + '/' + theDir4 + '/' + theView );
 });
 
@@ -72,21 +84,19 @@ router.get('/:subdir/:subdir2/:subdir3/:subdir4/:view', function(req, res, next)
 
 router.post('/ndop-next/v1/prelogin/how-do-you-want-to-prove-your-identity', function(req, res, next) {
 
-  var identityRoute = req.body.identity;
+  var identityRoute = req.body.identity; // grab the data
+  req.session.route = identityRoute; // add it to session object
 
   if (identityRoute === "one-time-auth") {
 
-    console.log("ndop");
     res.redirect( '/ndop-next/v1/one-time-auth/index' );
 
   } else if (identityRoute === "nhs-login") {
 
     res.redirect( '/ndop-next/v1/nhs-login/before-you-continue' );
-    console.log("nhs login");
 
   } else {
 
-    console.log("error");
     res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
 
   }
