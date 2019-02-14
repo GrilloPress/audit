@@ -104,7 +104,7 @@ router.post('/scr-audit/date-chooser/v1/how-do-you-want-to-search', function(req
 
   } else if (identityRoute === "between") {
 
-    res.redirect( '/scr-audit/date-chooser/v1/enter-the-two-days' );
+    res.redirect( '/scr-audit/date-chooser/v1/day-from' );
     console.log("nhs login");
 
   } else if (identityRoute === "year") {

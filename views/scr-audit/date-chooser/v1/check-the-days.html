@@ -1,0 +1,62 @@
+{% set title = "Check the days you entered" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+  <h1>{{ title }}</h1>
+
+  {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "From:"
+      },
+      value: {
+        text: "1 10 2018"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "from"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "To:"
+      },
+      value: {
+        text: "8 02 2019"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "to"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/'">
+  Continue
+</button>
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
