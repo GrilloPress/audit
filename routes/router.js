@@ -132,7 +132,7 @@ router.post('/scr-audit/date-chooser/v1/time-of-day', function(req, res, next) {
 
   } else if (identityRoute === "no") {
 
-    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
     console.log("nhs login");
 
   } else {
