@@ -41,25 +41,31 @@
     ]
   }) }}
   <p>
-    Use this service to check where your Summary Care Record has been used.
+    Your Summary Care Record is a short summary of your GP medical records. It tells other health and care staff who care for you about the medicines you take and your allergies.
   </p>
-  <p>
-    Your Summary Care Record comes from your GP record. It tells health and care staff:
-  </p>
+  <p>Your Summary Care Record comes from your GP record. It tells health and care staff:</p>
   <ul>
     <li>your allergies</li>
     <li>your medicines</li>
     <li>any reactions you've had to medicines</li>
   </ul>
-  <p>It helps health and care staff give you the right care when you are away from your GP surgery. For example, in an emergency.</p>
-    <h2>To use this service you'll need:</h2>
-    <ul>
-      <li>to be 16 or older</li>
-      <li>an NHS login - if you do not have one, we'll help you set one up</li>
-    </ul>
-  <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
-    Start now
-  </button>
+  <p>Health and care staff might look at your Summary Care Record:</p>
+  <ul>
+   <li>in an emergency</li>
+   <li>when you're on holiday</li>
+   <li>when your surgery is closed</li>
+   <li>at out-patient clinics</li>
+   <li>when you visit a pharmacy</li>
+  </ul>
+  <p>Staff will ask your permission to look at your Summary Care Record. Except from in an emergency, for example where you are unconscious and need urgent care.</p>
+  <p>Only staff with the right levels of security clearance can look at your Summary Care Record.</p>
+  <p>
+    <a href="#">You can check where your Summary Card Record has been used</a>
+  </p>
+  {{ pagination({
+    "nextUrl": "/" + PROTOTYPEURL + "/nhsuk/start",
+    "nextPage": serviceName
+  }) }}
 </div>
 {% endblock %}
 {% block sidebar %}

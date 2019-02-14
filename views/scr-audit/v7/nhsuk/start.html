@@ -62,6 +62,13 @@
   <button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/prelogin/before-you-continue'">
     Start now
   </button>
+
+  {{ pagination({
+    "previousUrl": "/" + PROTOTYPEURL + "/nhsuk/scr",
+    "previousPage": "Your Summary Care Record",
+    "nextUrl": "/" + PROTOTYPEURL + "/nhsuk/opt-out",
+    "nextPage": "Choose not to have a Summary Care Record"
+  }) }}
 </div>
 {% endblock %}
 {% block sidebar %}
