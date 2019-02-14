@@ -1,0 +1,46 @@
+{% set title = "Do you want to search by a time of day?" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <form action="/{{ PROTOTYPEURL }}/time-of-day" method="post">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "time",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No, show me all results from 1 10 2018"
+        }
+      ]
+    }) }}
+
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

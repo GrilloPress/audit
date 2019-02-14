@@ -1,0 +1,54 @@
+{% set title = "Choose the year you want to search by" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <form action="/{{ PROTOTYPEURL }}/choose-the-year" method="post">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "year",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "2019",
+          "text": "2019"
+        },
+        {
+          "value": "2018",
+          "text": "2018"
+        },
+        {
+          "value": "2017",
+          "text": "2017"
+        },
+        {
+          "value": "2016earlier",
+          "text": "2016 and earlier"
+        }
+      ]
+    }) }}
+
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
