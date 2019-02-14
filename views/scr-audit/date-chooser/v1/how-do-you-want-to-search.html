@@ -1,0 +1,50 @@
+{% set title = "How do you want to search?" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <form action="/{{ PROTOTYPEURL }}/how-do-you-want-to-search" method="post">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "date",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "day",
+          "text": "By day"
+        },
+        {
+          "value": "between",
+          "text": "Between 2 days"
+        },
+        {
+          "value": "year",
+          "text": "By year"
+        }
+      ]
+    }) }}
+
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

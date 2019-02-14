@@ -1,0 +1,53 @@
+{% set title = "Enter the first day" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+<form action="/{{ PROTOTYPEURL }}/day-to" method="get">
+
+    {{ dateInput({
+      "id": "dob",
+      "namePrefix": "dob",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-label--xl"
+        }
+      },
+      "hint": {
+        "text": "For example 1 10 2018"
+      },
+      "items": [
+        {
+          "name": "day",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "month",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "year",
+          "classes": "nhsuk-input--width-4"
+        }
+      ]
+    }) }}
+
+  <input type="submit" class="nhsuk-button" value="Continue">
+  </input>
+
+</form>
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

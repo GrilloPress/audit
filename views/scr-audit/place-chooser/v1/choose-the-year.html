@@ -1,0 +1,34 @@
+{% set title = "Choose the year you want to search by" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <h1 class="nhsuk-heading-l">{{title}}</h1>
+
+      <p>
+      <a href="2019">2019</a>
+      </p>
+
+      <p>
+      <a href="2018">2018</a>
+      </p>
+
+      <p>
+      <a href="2017">2017</a>
+      </p>
+
+      <p>
+      <a href="2016">2016 and earlier</a>
+      </p>
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

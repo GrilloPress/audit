@@ -103,5 +103,111 @@ router.post('/ndop-next/v1/prelogin/how-do-you-want-to-prove-your-identity', fun
 
 });
 
+router.post('/scr-audit/date-chooser/v1/how-do-you-want-to-search', function(req, res, next) {
+
+  var identityRoute = req.body.date;
+
+  if (identityRoute === "day") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/date-chooser/v1/enter-the-day' );
+
+  } else if (identityRoute === "between") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/day-from' );
+    console.log("nhs login");
+
+  } else if (identityRoute === "year") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/choose-the-year' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
+router.post('/scr-audit/date-chooser/v1/time-of-day', function(req, res, next) {
+
+  var identityRoute = req.body.time;
+
+  if (identityRoute === "yes") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/date-chooser/v1/time-of-day-yes' );
+
+  } else if (identityRoute === "no") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
+router.post('/scr-audit/date-chooser/v1/time-of-day-yes', function(req, res, next) {
+
+  var identityRoute = req.body.timeyes;
+
+  if (identityRoute === "yes") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+
+  } else if (identityRoute === "no") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
+router.post('/scr-audit/date-chooser/v1/choose-the-year', function(req, res, next) {
+
+  var identityRoute = req.body.year;
+
+  if (identityRoute === "2019") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+
+  } else if (identityRoute === "2018") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    console.log("nhs login");
+
+  } else if (identityRoute === "2017") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    console.log("nhs login");
+
+  } else if (identityRoute === "2016earlier") {
+
+    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
 
 module.exports = router;
