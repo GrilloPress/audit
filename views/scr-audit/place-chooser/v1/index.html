@@ -1,6 +1,6 @@
-{% set title = "Your Summary Care Record was looked at 9 times" %}
+{% set title = "Your Summary Care Record was looked at 2 times" %}
 {% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/date-chooser/v1" %}
+{% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
 {% block scripts %}
 {% endblock %}
 
@@ -9,11 +9,12 @@
 {% block body %}
 <div class="nhsuk-u-reading-width">
   <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In 2019</span>
     {{title}}
   </h1>
 </div>
 
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/how-do-you-want-to-search'">
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-place'">
   Search by place
 </button>
 

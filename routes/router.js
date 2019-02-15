@@ -210,4 +210,27 @@ router.post('/scr-audit/date-chooser/v1/choose-the-year', function(req, res, nex
 
 });
 
+router.post('/scr-audit/place-chooser/v1/did-you-mean', function(req, res, next) {
+
+  var identityRoute = req.body.timeyes;
+
+  if (identityRoute === "yes") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/place-chooser/v1/choose-the-year' );
+
+  } else if (identityRoute === "no") {
+
+    res.redirect( '/scr-audit/place-chooser/v1/enter-place' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
 module.exports = router;
