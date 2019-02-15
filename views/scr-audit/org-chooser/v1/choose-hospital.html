@@ -1,0 +1,53 @@
+{% set title = "What type of organisation do you want to search for?" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/org-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <form action="/{{ PROTOTYPEURL }}/search-results" method="get">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "timeyes",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "beforemidday",
+          "text": "Before midday (am)"
+        },
+        {
+          "value": "aftermidday",
+          "text": "After midday (pm)"
+        },
+        {
+          "divider": "or"
+        },
+        {
+          "value": "entertime",
+          "text": "Enter a particular time"
+        }
+      ]
+    }) }}
+
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
