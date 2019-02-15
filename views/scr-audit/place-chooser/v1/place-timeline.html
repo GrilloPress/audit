@@ -1,0 +1,55 @@
+{% set title = "Your Summary Care Record was looked at in 2 places in London" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+  {{ backLink({
+    "href": "choose-the-year",
+    "text": "Back to years"
+  }) }}
+
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">In 2019</span>
+    {{title}}
+  </h1>
+</div>
+
+        <h2 class="nhsuk-heading-m">January</h2>
+        <span class="timeline__date">2 times</span>
+
+        <ol class="timeline">
+          <li class="timeline__entry">
+            <h3 class="timeline__title">2 January 2019</h3>
+            <p class="timeline__info">
+              <span class="nhsuk-u-visually-hidden">2 January 2019</span>
+              <span class="timeline__date">1:45pm</span>
+            </p>
+            <a class="timeline__body" href="find-out-more-1">Find out more</a>
+            </p>
+          </li>
+
+          <li class="timeline__entry">
+            <h3 class="timeline__title">15 January 2019</h3>
+            <p class="timeline__info">
+              <span class="nhsuk-u-visually-hidden">15 January 2019</span>
+              <span class="timeline__date">9:05am</span>
+            </p>
+            <a class="timeline__body" href="find-out-more-2">Find out more</a>
+            </p>
+          </li>
+
+        </ol>
+
+      </div>
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

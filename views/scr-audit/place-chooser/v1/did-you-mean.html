@@ -1,0 +1,46 @@
+{% set title = "Did you mean London?" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+  <form action="/{{ PROTOTYPEURL }}/did-you-mean" method="post">
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "timeyes",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    }) }}
+
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

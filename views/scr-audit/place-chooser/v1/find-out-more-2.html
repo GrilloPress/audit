@@ -1,0 +1,48 @@
+{% set title = "Your Summary Care Record was looked at by Royal Free London NHS Foundation Trust" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
+{% set DATESTAMP = '15 January 2019' %}
+{% set TIME = '9:05am' %}
+{% set LOCATION = 'Royal Free London NHS Foundation Trust' %}
+{% set PHONE = '020 3758 2000' %}
+{% set ADDRESS = "Royal Free Hospital<br />
+                  Pond Street <br />
+                  London <br />
+                  NW3 2QG"
+                  %}
+{% block scripts %}
+{% endblock %}
+{% extends 'layouts/layout.html' %}
+
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+  {{ backLink({
+    "href": "/" + PROTOTYPEURL + "/place-timeline",
+    "text": "Back to timeline"
+  }) }}
+
+  <h1 class="nhsuk-heading-l">
+    <span class="audit-subheading">{{DATESTAMP}}</span>
+    {{TIME}}
+  </h1>
+  <p>Your Summary Care Record was looked at by {{LOCATION}}.</p>
+  <h2 class="nhsuk-heading-m">How to find out more</h2>
+  <p>Contact {{LOCATION}}:</p>
+  <ul>
+    <li>for more information</li>
+    <li>to make a complaint</li>
+  </ul>
+  <address>
+    <p>
+      {{ADDRESS | safe }}
+    </p>
+    <p>Telephone: {{PHONE}}</p>
+  </address>
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
