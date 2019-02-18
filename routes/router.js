@@ -184,21 +184,21 @@ router.post('/scr-audit/date-chooser/v1/choose-the-year', function(req, res, nex
   if (identityRoute === "2019") {
 
     console.log("ndop");
-    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
 
   } else if (identityRoute === "2018") {
 
-    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
     console.log("nhs login");
 
   } else if (identityRoute === "2017") {
 
-    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
     console.log("nhs login");
 
   } else if (identityRoute === "2016earlier") {
 
-    res.redirect( '/scr-audit/date-chooser/v1/?' );
+    res.redirect( '/scr-audit/date-chooser/v1/search-results' );
     console.log("nhs login");
 
   } else {
