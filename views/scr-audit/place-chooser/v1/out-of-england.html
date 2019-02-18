@@ -1,4 +1,4 @@
-{% set title = "Sorry, this service can only show you where your Summary Care Record has been looked at in England" %}
+{% set title = "Sorry, you've searched for a place outside of England" %}
 {% set serviceName = "Check how your Summary Care Record has been used" %}
 {% set PROTOTYPEURL = "scr-audit/place-chooser/v1" %}
 {% block scripts %}
@@ -11,9 +11,18 @@
   <h1 class="nhsuk-heading-l">{{title}}</h1>
 </div>
 
+<p>
+  We can only show you where your Summary Care Record has been looked at in England.
+</p>
+
+<form action="enter-place" method="get">
+  <input type="submit" class="nhsuk-button" value="Search for another place">
+  </input>
+</form>
+
 {{ backLink({
-  "href": "/scr-audit/place-chooser/v1/enter-place",
-  "text": "Search again"
+  "href": "/" + PROTOTYPEURL + "/index",
+  "text": "Back to dashboard "
 }) }}
 
 {% endblock %}
