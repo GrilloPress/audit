@@ -210,6 +210,39 @@ router.post('/scr-audit/date-chooser/v1/choose-the-year', function(req, res, nex
 
 });
 
+router.post('/scr-audit/place-chooser/v1/choose-the-year', function(req, res, next) {
+
+  var identityRoute = req.body.gov;
+
+  if (identityRoute === "2019") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/place-chooser/v1/place-timeline' );
+
+  } else if (identityRoute === "2018") {
+
+    res.redirect( '/scr-audit/place-chooser/v1/search-results' );
+    console.log("nhs login");
+
+  } else if (identityRoute === "2017") {
+
+    res.redirect( '/scr-audit/place-chooser/v1/search-results' );
+    console.log("nhs login");
+
+  } else if (identityRoute === "2016earlier") {
+
+    res.redirect( '/scr-audit/place-chooser/v1/search-results' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
 router.post('/scr-audit/place-chooser/v1/did-you-mean', function(req, res, next) {
 
   var identityRoute = req.body.timeyes;
