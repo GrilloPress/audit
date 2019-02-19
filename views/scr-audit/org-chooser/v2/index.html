@@ -1,6 +1,6 @@
-{% set title = "Your Summary Care Record has been looked at 9 times" %}
+{% set title = "Your Summary Care Record has been looked at 9 times by 2 organisations" %}
 {% set serviceName = "Check how your Summary Care Record has been used" %}
-{% set PROTOTYPEURL = "scr-audit/org-chooser/v1" %}
+{% set PROTOTYPEURL = "scr-audit/org-chooser/v2" %}
 {% block scripts %}
 {% endblock %}
 
@@ -14,8 +14,22 @@
   </h1>
 </div>
 
-<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-place'">
-  Search by organisation
+<ol class="audit-list--unstyled audit-list-cards">
+  <li class="audit-list-cards__item nhsuk-u-margin-bottom-3">
+    <a href="/{{PROTOTYPEURL}}/search-results">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">7 times in a pharmacy</h3>
+    </a>
+  </li>
+  <li class="audit-list-cards__item nhsuk-u-margin-bottom-3">
+    <a href="/{{PROTOTYPEURL}}/search-results">
+      <h3 class="audit-list-cards__heading nhsuk-heading-m">2 times in a hospital</h3>
+    </a>
+  </li>
+</ol>
+
+
+<button type="submit" class="nhsuk-button" onclick="window.location.href='/{{PROTOTYPEURL}}/enter-org-name-or-type'">
+  Search by organisation name or type
 </button>
 
 {% endblock %}
