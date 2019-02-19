@@ -1,0 +1,48 @@
+{% set title = "How do you want to search?" %}
+{% set serviceName = "Check how your Summary Care Record has been used" %}
+{% set PROTOTYPEURL = "scr-audit/org-chooser/v1" %}
+{% block scripts %}
+{% endblock %}
+
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="nhsuk-u-reading-width">
+
+  <form action="/{{ PROTOTYPEURL }}/how-do-you-want-to-search" method="post">
+
+    {{ radios({
+      "idPrefix": "gov",
+      "name": "nametype",
+      "fieldset": {
+        "legend": {
+          "text": title,
+          "isPageHeading": true,
+          "classes": "nhsuk-fieldset__legend--xl"
+        }
+      },
+      "items": [
+        {
+          "value": "name",
+          "text": "By name of organisation"
+        },
+        {
+          "value": "type",
+          "text": "By type of organisation"
+        }
+      ]
+    }) }}
+
+    <input type="submit" class="nhsuk-button" value="Continue">
+    </input>
+
+  </form>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

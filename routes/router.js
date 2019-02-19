@@ -266,4 +266,29 @@ router.post('/scr-audit/place-chooser/v1/did-you-mean', function(req, res, next)
 
 });
 
+router.post('/scr-audit/org-chooser/v1/how-do-you-want-to-search', function(req, res, next) {
+
+  var identityRoute = req.body.nametype;
+
+  if (identityRoute === "name") {
+
+    console.log("ndop");
+    res.redirect( '/scr-audit/org-chooser/v1/enter-org-name' );
+
+  } else if (identityRoute === "type") {
+
+    res.redirect( '/scr-audit/org-chooser/v1/enter-type' );
+    console.log("nhs login");
+
+  } else {
+
+    console.log("error");
+    res.redirect( '/ndop-next/v1/prelogin/error/no-choice-made' );
+
+  }
+
+});
+
+
+
 module.exports = router;
